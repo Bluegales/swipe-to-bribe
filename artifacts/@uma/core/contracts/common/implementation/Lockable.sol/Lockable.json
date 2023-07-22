@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Lockable",
+  "sourceName": "@uma/core/contracts/common/implementation/Lockable.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060016000806101000a81548160ff021916908315150217905550603f8060376000396000f3fe6080604052600080fdfea2646970667358221220ce20dc056458794a7ac2ac5aeb2ba0dcabf2d80cfbc2a4044760c7f93b798e7964736f6c63430008100033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220ce20dc056458794a7ac2ac5aeb2ba0dcabf2d80cfbc2a4044760c7f93b798e7964736f6c63430008100033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
