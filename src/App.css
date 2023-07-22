@@ -1,7 +1,6 @@
 #root {
   text-align: center;
   display: flex;
-  justify-content: center;
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
@@ -13,22 +12,14 @@
   user-select: none;
 }
 
-#root>div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .app {
-  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
-.app>div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.blocks {
+  flex: 1 1 0px;
+  border: 1px solid black;
 }
 
 .row {
@@ -56,13 +47,6 @@ h2 {
   width: 90vw;
   max-width: 260px;
   height: 300px;
-}
-
-.MetaMask {
-  display: flex;
-  flex-direction:column;
-  justify-content:left;
-  align-items: center;
 }
 
 .card {

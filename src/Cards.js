@@ -3,28 +3,38 @@ import TinderCard from 'react-tinder-card'
 
 const db = [
   {
-    name: 'Richard Hendricks',
+    promise: 'Some Things are gonna need to be done',
+    name: 'Patrick Fuchs',
+    party: '42 Heilbronn',
+    url: './img/dinesh.jpg'
+  },
+  {
+    promise: 'Some Things are gonna need to be done',
+    name: 'Angela Merkel',
+    party: 'CDU',
     url: './img/richard.jpg'
   },
   {
-    name: 'Erlich Bachman',
+    promise: 'Some Things are gonna need to be done',
+    name: 'Emmanuel Macron',
+    party: 'Renaissance',
     url: './img/erlich.jpg'
   },
   {
-    name: 'Monica Hall',
+    promise: 'yessss',
+    name: 'Joe Biden',
+    party: 'Democratic Party',
     url: './img/monica.jpg'
   },
   {
-    name: 'Jared Dunn',
+    promise: 'Some Things are gonna need to be done',
+    name: 'Marine Le Pen',
+    party: 'National Rally',
     url: './img/jared.jpg'
-  },
-  {
-    name: 'Dinesh Chugtai',
-    url: './img/dinesh.jpg'
   }
 ]
 
-function Advanced () {
+function Cards () {
   const [currentIndex, setCurrentIndex] = useState(db.length - 1)
   const [lastDirection, setLastDirection] = useState()
   // used for outOfFrame closure
@@ -42,8 +52,6 @@ function Advanced () {
     setCurrentIndex(val)
     currentIndexRef.current = val
   }
-
-  const canGoBack = currentIndex < db.length - 1
 
   const canSwipe = currentIndex >= 0
 
@@ -68,16 +76,9 @@ function Advanced () {
     }
   }
 
-  // increase current index and show card
-  const goBack = async () => {
-    if (!canGoBack) return
-    const newIndex = currentIndex + 1
-    updateCurrentIndex(newIndex)
-    await childRefs[newIndex].current.restoreCard()
-  }
 
   return (
-    <div>
+    <div classNames="blocks">
       <link
         href='https://fonts.googleapis.com/css?family=Damion&display=swap'
         rel='stylesheet'
@@ -107,7 +108,6 @@ function Advanced () {
       </div>
       <div className='buttons'>
         <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-        <button style={{ backgroundColor: !canGoBack && '#c3c4d3' }} onClick={() => goBack()}>Undo swipe!</button>
         <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
       </div>
       {lastDirection ? (
@@ -123,4 +123,4 @@ function Advanced () {
   )
 }
 
-export default Advanced
+export default Cards
