@@ -14,7 +14,7 @@ import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3In
 // @todo do I have to store the promises? take look at insurance UMA contract, they do it differently
 // @todo add UMA more-than-yes-or-no check
 // @todo add upper limit for staking
-contract PromiseEscrow is SismoConnect
+contract PromiseEscrow
 {
 	event ResponseVerified(SismoConnectVerifiedResult result);
 
