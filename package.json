@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@sismo-core/sismo-connect-solidity": "^0.0.19",
-    "@uma/core": "^2.56.0"
+    "@uma/core": "^2.56.0",
+    "dotenv": "^16.3.1"
   }
 }
