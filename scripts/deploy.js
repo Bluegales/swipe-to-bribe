@@ -26,11 +26,11 @@ async function main() {
 
   // We get the contract to deploy
   const PromiseEscrow = await hre.ethers.getContractFactory("PromiseEscrow");
-  const promiseEscrow = await PromiseEscrow.deploy("0x07865c6E87B9F70255377e024ace6630C1Eaa37F", "0x9923D42eF695B5dd9911D05Ac944d4cAca3c4EAB", "0x78eB50eE209a4DEE099Acc422c650825FD5D1771");
+  const promiseEscrow = await PromiseEscrow.deploy("0x07865c6E87B9F70255377e024ace6630C1Eaa37F", "0x9923D42eF695B5dd9911D05Ac944d4cAca3c4EAB", "0x2DBcc4C4A7df5b6839B83fb08A237402EC444a6c");
 
   await promiseEscrow.deployed();
 
-  console.log("SismoVerifier deployed to:", promiseEscrow.address);
+  console.log("PromiseEscrow deployed to:", promiseEscrow.address);
 }
 
 // async function main() {

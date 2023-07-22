@@ -1,6 +1,6 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "SismoVerifier",
+  "contractName": "ISismoVerifier",
   "sourceName": "contracts/PromiseEscrow.sol",
   "abi": [
     {
@@ -23,6 +23,11 @@
     },
     {
       "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "responseSismo",
+          "type": "bytes"
+        },
         {
           "internalType": "bytes",
           "name": "message",

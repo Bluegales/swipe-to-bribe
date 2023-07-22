@@ -6,10 +6,10 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/implementation/ClaimData.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3Interface.sol";
 
-interface SismoVerifier
+interface ISismoVerifier
 {
     function verifyCitizen(bytes memory responseSismo, bytes memory message) external;
-    function verifyPolitician(bytes memory message) external;
+    function verifyPolitician(bytes memory responseSismo, bytes memory message) external;
 }
 
 // @todo add events for all functions
@@ -33,22 +33,22 @@ contract PromiseEscrow
     );
     event promiseAsserted(bytes32 indexed promiseId, string assertedOutcome, bytes32 indexed assertionId);
     event promiseResolved(bytes32 indexed promiseId);
-    event TokensCreated(bytes32 indexed promiseId, address indexed account, uint256 tokensCreated);
-    event TokensRedeemed(bytes32 indexed promiseId, address indexed account, uint256 tokensRedeemed);
-    event TokensSettled(
-        bytes32 indexed promiseId,
-        address indexed account,
-        uint256 payout,
-        uint256 outcome1Tokens,
-        uint256 outcome2Tokens
-    );
+    // event TokensCreated(bytes32 indexed promiseId, address indexed account, uint256 tokensCreated);
+    // event TokensRedeemed(bytes32 indexed promiseId, address indexed account, uint256 tokensRedeemed);
+    // event TokensSettled(
+    //     bytes32 indexed promiseId,
+    //     address indexed account,
+    //     uint256 payout,
+    //     uint256 outcome1Tokens,
+    //     uint256 outcome2Tokens
+    // );
 
     using SafeERC20 for IERC20;
     IERC20 public immutable                      currency;
     OptimisticOracleV3Interface public immutable oo;
     bytes32 public immutable                     defaultIdentifier;
     uint64 public constant                       oneDayInBlocks = 7200;
-    SismoVerifier public                         sismoVerifier;
+    ISismoVerifier public                         sismoVerifier;
 
     struct Promise
     {
@@ -74,16 +74,16 @@ contract PromiseEscrow
         currency = IERC20(_currency);
         oo = OptimisticOracleV3Interface(_optimisticOracleV3);
         defaultIdentifier = oo.defaultIdentifier();
-        sismoVerifier = SismoVerifier(_sismoVerifier);
+        sismoVerifier = ISismoVerifier(_sismoVerifier);
     }
 
     function getPromise(bytes32 promiseId) public view returns (Promise memory) {
         return promises[promiseId];
     }
 
-    function createPromise(string memory statement) public returns (bytes32 promiseId)
+    function createPromise(string memory statement, bytes memory responseSismo) public returns (bytes32 promiseId)
     {
-        sismoVerifier.verifyPolitician(abi.encodePacked("Creating promise ", statement));
+        sismoVerifier.verifyPolitician(responseSismo, abi.encodePacked("Creating promise ", statement));
 
         promiseId = keccak256(abi.encode(statement, msg.sender));
         require(promises[promiseId].politician == address(0), "promise already exists");
@@ -96,6 +96,8 @@ contract PromiseEscrow
             payedOutcome: 0,
             resolved: false
         });
+
+        emit promiseInitialized(promiseId, "Yes", "No", statement, address(0), address(0), 0, 0);
     }
 
     // @todo restrict possible payment amounts
