@@ -10,10 +10,10 @@ module.exports = {
         version: "0.8.17",
         settings: {} // your settings
       },
-      {
-        version: "^0.7",
-        settings: {}
-      }
+      // {
+      //   version: "^0.8.0",
+      //   settings: {}
+      // }
     ]
   },
 };
