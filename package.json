@@ -7,6 +7,7 @@
     "ethers": "^5.7.2"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@sismo-core/sismo-connect-solidity": "^0.0.19",
     "@uma/core": "^2.56.0"
   }

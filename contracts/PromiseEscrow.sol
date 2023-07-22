@@ -1,11 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.16;
+pragma solidity 0.8.16;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 import "@uma/core/contracts/optimistic-oracle-v3/implementation/ClaimData.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3Interface.sol";
+
+import "./SismoVerifier.sol";
 
 // @todo add events for all functions
 // @todo especially emit promiseCreated event
@@ -16,8 +18,6 @@ import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3In
 // @todo add upper limit for staking
 contract PromiseEscrow
 {
-	event ResponseVerified(SismoConnectVerifiedResult result);
-
 	using SafeERC20 for IERC20;
     IERC721 public                               collectionA;
     IERC721 public                               collectionB;
@@ -25,8 +25,7 @@ contract PromiseEscrow
 	OptimisticOracleV3Interface public immutable oo;
 	bytes32 public immutable                     defaultIdentifier;
 	uint64 public constant                       oneDayInBlocks = 7200;
-	address                                      citizenGroup = 0x6e41539fdb94fe30e82d46d7f664860f;
-	address                                      politicianGroup = 0xe57abdb9acb2d308d4ec1a12833e1c9f;
+	SismoVerifier public                         sismoVerifier;
 
     struct Voting {
 		uint                     totalVotes;
@@ -63,7 +62,7 @@ contract PromiseEscrow
 		// @todo add EAS politician-attestation check
 		require(collectionA.balanceOf(msg.sender) > 0, "Must own an NFT from collection A");
 
-		// verifySismoConnectResponse(responseSismo, politicianGroup);
+		sismoVerifier.verifyPolitician(abi.encodePacked("Creating promise ", statement));
 		promiseId = keccak256(abi.encode(statement, msg.sender, _endBlock));
 		promises[promiseId] = Promise
 		({
@@ -83,7 +82,7 @@ contract PromiseEscrow
 		require(collectionB.balanceOf(msg.sender) > 0, "Must own an NFT from collection B");
 		require(msg.value > 0, "Must send ETH to stake for a promise");
 
-		// verifySismoConnectResponse(responseSismo, citizenGroup);
+		sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked("Staking for promise ", promises[promiseId].statement));
 		promises[promiseId].stake += msg.value;
 	}
 
@@ -99,7 +98,7 @@ contract PromiseEscrow
 		Voting storage curr = votes[promiseId];
         require(!curr.voters[msg.sender], "You have already voted");
 
-		// verifySismoConnectResponse(responseSismo, citizenGroup);
+		sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked("Voting for promise ", promises[promiseId].statement));
 		curr.voters[msg.sender] = true;
 		curr.totalVotes += 1;
 		if (vote)

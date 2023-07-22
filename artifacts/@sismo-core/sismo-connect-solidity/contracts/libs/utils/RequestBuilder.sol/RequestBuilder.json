@@ -1,0 +1,4540 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "RequestBuilder",
+  "sourceName": "@sismo-core/sismo-connect-solidity/contracts/libs/utils/RequestBuilder.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DEFAULT_NAMESPACE",
+      "outputs": [
+        {
+          "internalType": "bytes16",
+          "name": "",
+          "type": "bytes16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest[]",
+          "name": "auths",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest[]",
+          "name": "claims",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "bytes16",
+          "name": "namespace",
+          "type": "bytes16"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum AuthType",
+              "name": "authType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "userId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isAnon",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct AuthRequest",
+          "name": "auth",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "enum ClaimType",
+              "name": "claimType",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupId",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "bytes16",
+              "name": "groupTimestamp",
+              "type": "bytes16"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "isOptional",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct ClaimRequest",
+          "name": "claim",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "message",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bool",
+              "name": "isSelectableByUser",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "extraData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct SignatureRequest",
+          "name": "signature",
+          "type": "tuple"
+        }
+      ],
+      "name": "build",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes16",
+              "name": "namespace",
+              "type": "bytes16"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum AuthType",
+                  "name": "authType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "userId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isAnon",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct AuthRequest[]",
+              "name": "auths",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "enum ClaimType",
+                  "name": "claimType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupId",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "bytes16",
+                  "name": "groupTimestamp",
+                  "type": "bytes16"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isOptional",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct ClaimRequest[]",
+              "name": "claims",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes",
+                  "name": "message",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "isSelectableByUser",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "extraData",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct SignatureRequest",
+              "name": "signature",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct SismoConnectRequest",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x601860e09081527f4d4553534147455f53454c45435445445f42595f555345520000000000000000610100526080818152600060a081905261014060405261012081815260c0529091819062000056908262000141565b50602082015160018201805460ff19169115159190911790556040820151600282019062000085908262000141565b5050503480156200009557600080fd5b506200020d565b634e487b7160e01b600052604160045260246000fd5b600181811c90821680620000c757607f821691505b602082108103620000e857634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156200013c57600081815260208120601f850160051c81016020861015620001175750805b601f850160051c820191505b81811015620001385782815560010162000123565b5050505b505050565b81516001600160401b038111156200015d576200015d6200009c565b62000175816200016e8454620000b2565b84620000ee565b602080601f831160018114620001ad5760008415620001945750858301515b600019600386901b1c1916600185901b17855562000138565b600085815260208120601f198616915b82811015620001de57888601518255948401946001909101908401620001bd565b5085821015620001fd5787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b612700806200021d6000396000f3fe608060405234801561001057600080fd5b50600436106101735760003560e01c80639266f47c116100de578063d7ccd8da11610097578063e48cd72111610071578063e48cd72114610338578063e93f38b81461034b578063f1c1e2091461035e578063f2d3f1f61461037157600080fd5b8063d7ccd8da146102ff578063dd10826714610312578063dde11c7c1461032557600080fd5b80639266f47c1461028d57806399240336146102a0578063a156e2d8146102b3578063b33cd323146102c6578063b5ae2587146102d9578063c9f97f53146102ec57600080fd5b806327b5b7c31161013057806327b5b7c31461021b5780632ceb1e8d1461022e57806331560e751461024157806348fd24cc14610254578063548525771461026757806391ba07f31461027a57600080fd5b8063080b53f8146101785780630e58be05146101a157806310c5d31b146101b457806311f83e20146101c757806314ddafa3146101da5780631b399c99146101ed575b600080fd5b61018b610186366004611a5c565b610384565b6040516101989190611c16565b60405180910390f35b61018b6101af366004611d21565b61058c565b61018b6101c2366004611e92565b6107a1565b61018b6101d5366004611fb7565b610864565b61018b6101e836600461206a565b610a23565b6102026000805160206126ab83398151915281565b6040516001600160801b03199091168152602001610198565b61018b6102293660046120a2565b610a92565b61018b61023c3660046120d7565b610b12565b61018b61024f36600461213a565b610b81565b61018b610262366004612195565b610da7565b61018b6102753660046121cb565b610e71565b61018b610288366004612203565b610f38565b61018b61029b366004612238565b61100e565b61018b6102ae366004612293565b61105a565b61018b6102c136600461231a565b611099565b61018b6102d4366004612373565b6110f3565b61018b6102e73660046123a7565b611181565b61018b6102fa3660046123dd565b6111f3565b61018b61030d366004612413565b6112c7565b61018b610320366004612447565b6113ab565b61018b61033336600461247f565b61141a565b61018b6103463660046124d8565b61151a565b61018b610359366004612570565b611552565b61018b61036c3660046125cb565b611637565b61018b61037f366004612600565b6116b7565b61038c6117a9565b60408051600080825260208201909252816103bd565b6103aa6117fe565b8152602001906001900390816103a25790505b5060408051600180825281830190925291925060009190816020015b6103e161183b565b8152602001906001900390816103d9579050509050848160008151811061040a5761040a61265a565b60200260200101819052506040518060800160405280856001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b80601f016020809104026020016040519081016040528092919081815260200182805461048590612670565b80156104d25780601f106104a7576101008083540402835291602001916104d2565b820191906000526020600020905b8154815290600101906020018083116104b557829003601f168201915b5050509183525050600182015460ff16151560208201526002820180546040909201916104fe90612670565b80601f016020809104026020016040519081016040528092919081815260200182805461052a90612670565b80156105775780601f1061054c57610100808354040283529160200191610577565b820191906000526020600020905b81548152906001019060200180831161055a57829003601f168201915b50505091909252505050905295945050505050565b6105946117a9565b60408051600080825260208201909252816105c5565b6105b26117fe565b8152602001906001900390816105aa5790505b5060408051600180825281830190925291925060009190816020015b6105e961183b565b8152602001906001900390816105e157905050905083816000815181106106125761061261265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461066f90612670565b80601f016020809104026020016040519081016040528092919081815260200182805461069b90612670565b80156106e85780601f106106bd576101008083540402835291602001916106e8565b820191906000526020600020905b8154815290600101906020018083116106cb57829003601f168201915b5050509183525050600182015460ff161515602082015260028201805460409092019161071490612670565b80601f016020809104026020016040519081016040528092919081815260200182805461074090612670565b801561078d5780601f106107625761010080835404028352916020019161078d565b820191906000526020600020905b81548152906001019060200180831161077057829003601f168201915b505050919092525050509052949350505050565b6107a96117a9565b604080516001808252818301909252600091816020015b6107c86117fe565b8152602001906001900390816107c057905050905084816000815181106107f1576107f161265a565b60209081029190910181019190915260408051600080825292810190915281610830565b61081d61183b565b8152602001906001900390816108155790505b50604080516080810182526001600160801b0319871681526020810194909452830152506060810184905290509392505050565b61086c6117a9565b604080516000808252602082019092528161089d565b61088a61183b565b8152602001906001900390816108825790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200184815260200182815260200160006040518060600160405290816000820180546108f290612670565b80601f016020809104026020016040519081016040528092919081815260200182805461091e90612670565b801561096b5780601f106109405761010080835404028352916020019161096b565b820191906000526020600020905b81548152906001019060200180831161094e57829003601f168201915b5050509183525050600182015460ff161515602082015260028201805460409092019161099790612670565b80601f01602080910402602001604051908101604052809291908181526020018280546109c390612670565b8015610a105780601f106109e557610100808354040283529160200191610a10565b820191906000526020600020905b8154815290600101906020018083116109f357829003601f168201915b5050509190925250505090529392505050565b610a2b6117a9565b6040805160008082526020820190925281610a5c565b610a496117fe565b815260200190600190039081610a415790505b50604080516080810182526001600160801b03198616815260208101929092528101869052606081018590529150509392505050565b610a9a6117a9565b6040805160008082526020820190925281610acb565b610ab861183b565b815260200190600190039081610ab05790505b5090506040518060800160405280846001600160801b0319168152602001858152602001828152602001600060405180606001604052908160008201805461066f90612670565b610b1a6117a9565b6040805160008082526020820190925281610b4b565b610b3861183b565b815260200190600190039081610b305790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b815260208101969096528501525050606082015290565b610b896117a9565b604080516001808252818301909252600091816020015b610ba86117fe565b815260200190600190039081610ba05790505090508481600081518110610bd157610bd161265a565b6020908102919091010152604080516001808252818301909252600091816020015b610bfb61183b565b815260200190600190039081610bf35790505090508481600081518110610c2457610c2461265a565b60200260200101819052506040518060800160405280856001600160801b03191681526020018381526020018281526020016000604051806060016040529081600082018054610c7390612670565b80601f0160208091040260200160405190810160405280929190818152602001828054610c9f90612670565b8015610cec5780601f10610cc157610100808354040283529160200191610cec565b820191906000526020600020905b815481529060010190602001808311610ccf57829003601f168201915b5050509183525050600182015460ff1615156020820152600282018054604090920191610d1890612670565b80601f0160208091040260200160405190810160405280929190818152602001828054610d4490612670565b8015610d915780601f10610d6657610100808354040283529160200191610d91565b820191906000526020600020905b815481529060010190602001808311610d7457829003601f168201915b5050509190925250505090529695505050505050565b610daf6117a9565b604080516001808252818301909252600091816020015b610dce6117fe565b815260200190600190039081610dc65790505090508381600081518110610df757610df761265a565b60209081029190910181019190915260408051600080825292810190915281610e36565b610e2361183b565b815260200190600190039081610e1b5790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b8152602081019490945283015250606081019290925250919050565b610e796117a9565b6040805160008082526020820190925281610eaa565b610e976117fe565b815260200190600190039081610e8f5790505b5060408051600180825281830190925291925060009190816020015b610ece61183b565b815260200190600190039081610ec65790505090508581600081518110610ef757610ef761265a565b60200260200101819052506040518060800160405280856001600160801b031916815260200183815260200182815260200186815250925050509392505050565b610f406117a9565b604080516001808252818301909252600091816020015b610f5f6117fe565b815260200190600190039081610f575790505090508381600081518110610f8857610f8861265a565b60209081029190910181019190915260408051600080825292810190915281610fc7565b610fb461183b565b815260200190600190039081610fac5790505b5090506040518060800160405280856001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b6110166117a9565b6040518060800160405280836001600160801b0319168152602001858152602001848152602001600060405180606001604052908160008201805461066f90612670565b6110626117a9565b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b81526020810194909452830191909152606082015290565b6110a16117a9565b60405180608001604052806000805160206126ab8339815191526001600160801b031916815260200184815260200183815260200160006040518060600160405290816000820180546108f290612670565b6110fb6117a9565b604080516000808252602082019092528161112c565b6111196117fe565b8152602001906001900390816111115790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200182815260200184815260200160006040518060600160405290816000820180546108f290612670565b6111896117a9565b60408051600080825260208201909252816111ba565b6111a76117fe565b81526020019060019003908161119f5790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b815260208101929092528101949094525050606082015290565b6111fb6117a9565b604080516000808252602082019092528161122c565b6112196117fe565b8152602001906001900390816112115790505b5060408051600180825281830190925291925060009190816020015b61125061183b565b81526020019060019003908161124857905050905084816000815181106112795761127961265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001858152509250505092915050565b6112cf6117a9565b604080516001808252818301909252600091816020015b6112ee6117fe565b8152602001906001900390816112e657905050905082816000815181106113175761131761265a565b60209081029190910181019190915260408051600080825292810190915281611356565b61134361183b565b81526020019060019003908161133b5790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461066f90612670565b6113b36117a9565b60408051600080825260208201909252816113e4565b6113d161183b565b8152602001906001900390816113c95790505b50604080516080810182526001600160801b03199095168552602085019690965294830194909452506060810191909152919050565b6114226117a9565b604080516001808252818301909252600091816020015b6114416117fe565b815260200190600190039081611439579050509050838160008151811061146a5761146a61265a565b6020908102919091010152604080516001808252818301909252600091816020015b61149461183b565b81526020019060019003908161148c57905050905083816000815181106114bd576114bd61265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b6115226117a9565b50604080516080810182526001600160801b03199092168252602082019490945292830191909152606082015290565b61155a6117a9565b604080516001808252818301909252600091816020015b6115796117fe565b81526020019060019003908161157157905050905085816000815181106115a2576115a261265a565b6020908102919091010152604080516001808252818301909252600091816020015b6115cc61183b565b8152602001906001900390816115c457905050905085816000815181106115f5576115f561265a565b60200260200101819052506040518060800160405280856001600160801b03191681526020018381526020018281526020018681525092505050949350505050565b61163f6117a9565b6040805160008082526020820190925281611670565b61165d6117fe565b8152602001906001900390816116555790505b5090506040518060800160405280846001600160801b0319168152602001828152602001858152602001600060405180606001604052908160008201805461066f90612670565b6116bf6117a9565b604080516001808252818301909252600091816020015b6116de6117fe565b8152602001906001900390816116d657905050905084816000815181106117075761170761265a565b6020908102919091010152604080516001808252818301909252600091816020015b61173161183b565b815260200190600190039081611729579050509050848160008151811061175a5761175a61265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200183815260200182815260200185815250925050509392505050565b604051806080016040528060006001600160801b031916815260200160608152602001606081526020016117f9604051806060016040528060608152602001600015158152602001606081525090565b905290565b6040805160c08101909152806000815260200160008152602001600015158152602001600015158152602001600015158152602001606081525090565b6040805160e0810190915280600081526000602082018190526040820181905260608083018290526080830182905260a083019190915260c09091015290565b634e487b7160e01b600052604160045260246000fd5b60405160e081016001600160401b03811182821017156118b3576118b361187b565b60405290565b60405160c081016001600160401b03811182821017156118b3576118b361187b565b604051601f8201601f191681016001600160401b03811182821017156119035761190361187b565b604052919050565b80356005811061191a57600080fd5b919050565b80356001600160801b03198116811461191a57600080fd5b8035801515811461191a57600080fd5b600082601f83011261195857600080fd5b81356001600160401b038111156119715761197161187b565b611984601f8201601f19166020016118db565b81815284602083860101111561199957600080fd5b816020850160208301376000918101602001919091529392505050565b600060e082840312156119c857600080fd5b6119d0611891565b90506119db8261190b565b81526119e96020830161191f565b60208201526119fa6040830161191f565b604082015260608201356060820152611a1560808301611937565b6080820152611a2660a08301611937565b60a082015260c08201356001600160401b03811115611a4457600080fd5b611a5084828501611947565b60c08301525092915050565b60008060408385031215611a6f57600080fd5b82356001600160401b03811115611a8557600080fd5b611a91858286016119b6565b925050611aa06020840161191f565b90509250929050565b634e487b7160e01b600052602160045260246000fd5b6000815180845260005b81811015611ae557602081850181015186830182015201611ac9565b506000602082860101526020601f19601f83011685010191505092915050565b600081518084526020808501808196506005915083821b810183870160005b86811015611bc5578383038a52815160e08151878110611b4657611b46611aa9565b8552818801516001600160801b03191688860152604080830151611b75828801826001600160801b0319169052565b50506060828101519086015260808083015115159086015260a08083015115159086015260c091820151918501819052611bb181860183611abf565b9b88019b9450505090850190600101611b24565b509098975050505050505050565b6000815160608452611be86060850182611abf565b905060208301511515602085015260408301518482036040860152611c0d8282611abf565b95945050505050565b6000602080835260a08084016001600160801b0319865116838601528286015160806040818189015283835180865260c09550858a019150858160051b8b0101888601955060005b82811015611cd5578b820360bf190184528651805160068110611c8357611c83611aa9565b8352808b01518b8401528581015115158684015260608082015115159084015286810151151587840152890151898301899052611cc289840182611abf565b978b0197948b0194925050600101611c5e565b50838c01519850601f199750878b82030160608c0152611cf5818a611b05565b985050505050606088015192508387860301818801525050611d178382611bd3565b9695505050505050565b600060208284031215611d3357600080fd5b81356001600160401b03811115611d4957600080fd5b611d55848285016119b6565b949350505050565b600060c08284031215611d6f57600080fd5b611d776118b9565b9050813560068110611d8857600080fd5b815260208281013590820152611da060408301611937565b6040820152611db160608301611937565b6060820152611dc260808301611937565b608082015260a08201356001600160401b03811115611de057600080fd5b611dec84828501611947565b60a08301525092915050565b600060608284031215611e0a57600080fd5b604051606081016001600160401b038282108183111715611e2d57611e2d61187b565b816040528293508435915080821115611e4557600080fd5b611e5186838701611947565b8352611e5f60208601611937565b60208401526040850135915080821115611e7857600080fd5b50611e8585828601611947565b6040830152505092915050565b600080600060608486031215611ea757600080fd5b83356001600160401b0380821115611ebe57600080fd5b611eca87838801611d5d565b94506020860135915080821115611ee057600080fd5b50611eed86828701611df8565b925050611efc6040850161191f565b90509250925092565b60006001600160401b03821115611f1e57611f1e61187b565b5060051b60200190565b600082601f830112611f3957600080fd5b81356020611f4e611f4983611f05565b6118db565b82815260059290921b84018101918181019086841115611f6d57600080fd5b8286015b84811015611fac5780356001600160401b03811115611f905760008081fd5b611f9e8986838b0101611d5d565b845250918301918301611f71565b509695505050505050565b600060208284031215611fc957600080fd5b81356001600160401b03811115611fdf57600080fd5b611d5584828501611f28565b600082601f830112611ffc57600080fd5b8135602061200c611f4983611f05565b82815260059290921b8401810191818101908684111561202b57600080fd5b8286015b84811015611fac5780356001600160401b0381111561204e5760008081fd5b61205c8986838b01016119b6565b84525091830191830161202f565b60008060006060848603121561207f57600080fd5b83356001600160401b038082111561209657600080fd5b611eca87838801611feb565b600080604083850312156120b557600080fd5b82356001600160401b038111156120cb57600080fd5b611a9185828601611f28565b600080604083850312156120ea57600080fd5b82356001600160401b038082111561210157600080fd5b61210d86838701611f28565b9350602085013591508082111561212357600080fd5b5061213085828601611df8565b9150509250929050565b60008060006060848603121561214f57600080fd5b83356001600160401b038082111561216657600080fd5b61217287838801611d5d565b9450602086013591508082111561218857600080fd5b50611eed868287016119b6565b600080604083850312156121a857600080fd5b82356001600160401b03808211156121bf57600080fd5b61210d86838701611d5d565b6000806000606084860312156121e057600080fd5b83356001600160401b03808211156121f757600080fd5b611eca878388016119b6565b6000806040838503121561221657600080fd5b82356001600160401b0381111561222c57600080fd5b611a9185828601611d5d565b60008060006060848603121561224d57600080fd5b83356001600160401b038082111561226457600080fd5b61227087838801611f28565b9450602086013591508082111561228657600080fd5b50611eed86828701611feb565b6000806000606084860312156122a857600080fd5b83356001600160401b03808211156122bf57600080fd5b6122cb87838801611f28565b945060208601359150808211156122e157600080fd5b6122ed87838801611feb565b9350604086013591508082111561230357600080fd5b5061231086828701611df8565b9150509250925092565b6000806040838503121561232d57600080fd5b82356001600160401b038082111561234457600080fd5b61235086838701611f28565b9350602085013591508082111561236657600080fd5b5061213085828601611feb565b60006020828403121561238557600080fd5b81356001600160401b0381111561239b57600080fd5b611d5584828501611feb565b600080604083850312156123ba57600080fd5b82356001600160401b03808211156123d157600080fd5b61210d86838701611feb565b600080604083850312156123f057600080fd5b82356001600160401b038082111561240757600080fd5b61210d868387016119b6565b60006020828403121561242557600080fd5b81356001600160401b0381111561243b57600080fd5b611d5584828501611d5d565b60008060006060848603121561245c57600080fd5b83356001600160401b038082111561247357600080fd5b611eca87838801611f28565b6000806040838503121561249257600080fd5b82356001600160401b03808211156124a957600080fd5b6124b586838701611d5d565b935060208501359150808211156124cb57600080fd5b50612130858286016119b6565b600080600080608085870312156124ee57600080fd5b84356001600160401b038082111561250557600080fd5b61251188838901611f28565b9550602087013591508082111561252757600080fd5b61253388838901611feb565b9450604087013591508082111561254957600080fd5b5061255687828801611df8565b9250506125656060860161191f565b905092959194509250565b6000806000806080858703121561258657600080fd5b84356001600160401b038082111561259d57600080fd5b6125a988838901611d5d565b955060208701359150808211156125bf57600080fd5b612533888389016119b6565b600080604083850312156125de57600080fd5b82356001600160401b038111156125f457600080fd5b611a9185828601611feb565b60008060006060848603121561261557600080fd5b83356001600160401b038082111561262c57600080fd5b61263887838801611d5d565b9450602086013591508082111561264e57600080fd5b6122ed878388016119b6565b634e487b7160e01b600052603260045260246000fd5b600181811c9082168061268457607f821691505b6020821081036126a457634e487b7160e01b600052602260045260246000fd5b5091905056feb8e2054f8a912367e38a22ce773328ff8aabf8082c4120bad9ef085e1dbf29a7a26469706673582212204b8f7a5a5ba91b3206ed347b001f93e82488edcd35d9097494101ab2a303678a64736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101735760003560e01c80639266f47c116100de578063d7ccd8da11610097578063e48cd72111610071578063e48cd72114610338578063e93f38b81461034b578063f1c1e2091461035e578063f2d3f1f61461037157600080fd5b8063d7ccd8da146102ff578063dd10826714610312578063dde11c7c1461032557600080fd5b80639266f47c1461028d57806399240336146102a0578063a156e2d8146102b3578063b33cd323146102c6578063b5ae2587146102d9578063c9f97f53146102ec57600080fd5b806327b5b7c31161013057806327b5b7c31461021b5780632ceb1e8d1461022e57806331560e751461024157806348fd24cc14610254578063548525771461026757806391ba07f31461027a57600080fd5b8063080b53f8146101785780630e58be05146101a157806310c5d31b146101b457806311f83e20146101c757806314ddafa3146101da5780631b399c99146101ed575b600080fd5b61018b610186366004611a5c565b610384565b6040516101989190611c16565b60405180910390f35b61018b6101af366004611d21565b61058c565b61018b6101c2366004611e92565b6107a1565b61018b6101d5366004611fb7565b610864565b61018b6101e836600461206a565b610a23565b6102026000805160206126ab83398151915281565b6040516001600160801b03199091168152602001610198565b61018b6102293660046120a2565b610a92565b61018b61023c3660046120d7565b610b12565b61018b61024f36600461213a565b610b81565b61018b610262366004612195565b610da7565b61018b6102753660046121cb565b610e71565b61018b610288366004612203565b610f38565b61018b61029b366004612238565b61100e565b61018b6102ae366004612293565b61105a565b61018b6102c136600461231a565b611099565b61018b6102d4366004612373565b6110f3565b61018b6102e73660046123a7565b611181565b61018b6102fa3660046123dd565b6111f3565b61018b61030d366004612413565b6112c7565b61018b610320366004612447565b6113ab565b61018b61033336600461247f565b61141a565b61018b6103463660046124d8565b61151a565b61018b610359366004612570565b611552565b61018b61036c3660046125cb565b611637565b61018b61037f366004612600565b6116b7565b61038c6117a9565b60408051600080825260208201909252816103bd565b6103aa6117fe565b8152602001906001900390816103a25790505b5060408051600180825281830190925291925060009190816020015b6103e161183b565b8152602001906001900390816103d9579050509050848160008151811061040a5761040a61265a565b60200260200101819052506040518060800160405280856001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b80601f016020809104026020016040519081016040528092919081815260200182805461048590612670565b80156104d25780601f106104a7576101008083540402835291602001916104d2565b820191906000526020600020905b8154815290600101906020018083116104b557829003601f168201915b5050509183525050600182015460ff16151560208201526002820180546040909201916104fe90612670565b80601f016020809104026020016040519081016040528092919081815260200182805461052a90612670565b80156105775780601f1061054c57610100808354040283529160200191610577565b820191906000526020600020905b81548152906001019060200180831161055a57829003601f168201915b50505091909252505050905295945050505050565b6105946117a9565b60408051600080825260208201909252816105c5565b6105b26117fe565b8152602001906001900390816105aa5790505b5060408051600180825281830190925291925060009190816020015b6105e961183b565b8152602001906001900390816105e157905050905083816000815181106106125761061261265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461066f90612670565b80601f016020809104026020016040519081016040528092919081815260200182805461069b90612670565b80156106e85780601f106106bd576101008083540402835291602001916106e8565b820191906000526020600020905b8154815290600101906020018083116106cb57829003601f168201915b5050509183525050600182015460ff161515602082015260028201805460409092019161071490612670565b80601f016020809104026020016040519081016040528092919081815260200182805461074090612670565b801561078d5780601f106107625761010080835404028352916020019161078d565b820191906000526020600020905b81548152906001019060200180831161077057829003601f168201915b505050919092525050509052949350505050565b6107a96117a9565b604080516001808252818301909252600091816020015b6107c86117fe565b8152602001906001900390816107c057905050905084816000815181106107f1576107f161265a565b60209081029190910181019190915260408051600080825292810190915281610830565b61081d61183b565b8152602001906001900390816108155790505b50604080516080810182526001600160801b0319871681526020810194909452830152506060810184905290509392505050565b61086c6117a9565b604080516000808252602082019092528161089d565b61088a61183b565b8152602001906001900390816108825790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200184815260200182815260200160006040518060600160405290816000820180546108f290612670565b80601f016020809104026020016040519081016040528092919081815260200182805461091e90612670565b801561096b5780601f106109405761010080835404028352916020019161096b565b820191906000526020600020905b81548152906001019060200180831161094e57829003601f168201915b5050509183525050600182015460ff161515602082015260028201805460409092019161099790612670565b80601f01602080910402602001604051908101604052809291908181526020018280546109c390612670565b8015610a105780601f106109e557610100808354040283529160200191610a10565b820191906000526020600020905b8154815290600101906020018083116109f357829003601f168201915b5050509190925250505090529392505050565b610a2b6117a9565b6040805160008082526020820190925281610a5c565b610a496117fe565b815260200190600190039081610a415790505b50604080516080810182526001600160801b03198616815260208101929092528101869052606081018590529150509392505050565b610a9a6117a9565b6040805160008082526020820190925281610acb565b610ab861183b565b815260200190600190039081610ab05790505b5090506040518060800160405280846001600160801b0319168152602001858152602001828152602001600060405180606001604052908160008201805461066f90612670565b610b1a6117a9565b6040805160008082526020820190925281610b4b565b610b3861183b565b815260200190600190039081610b305790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b815260208101969096528501525050606082015290565b610b896117a9565b604080516001808252818301909252600091816020015b610ba86117fe565b815260200190600190039081610ba05790505090508481600081518110610bd157610bd161265a565b6020908102919091010152604080516001808252818301909252600091816020015b610bfb61183b565b815260200190600190039081610bf35790505090508481600081518110610c2457610c2461265a565b60200260200101819052506040518060800160405280856001600160801b03191681526020018381526020018281526020016000604051806060016040529081600082018054610c7390612670565b80601f0160208091040260200160405190810160405280929190818152602001828054610c9f90612670565b8015610cec5780601f10610cc157610100808354040283529160200191610cec565b820191906000526020600020905b815481529060010190602001808311610ccf57829003601f168201915b5050509183525050600182015460ff1615156020820152600282018054604090920191610d1890612670565b80601f0160208091040260200160405190810160405280929190818152602001828054610d4490612670565b8015610d915780601f10610d6657610100808354040283529160200191610d91565b820191906000526020600020905b815481529060010190602001808311610d7457829003601f168201915b5050509190925250505090529695505050505050565b610daf6117a9565b604080516001808252818301909252600091816020015b610dce6117fe565b815260200190600190039081610dc65790505090508381600081518110610df757610df761265a565b60209081029190910181019190915260408051600080825292810190915281610e36565b610e2361183b565b815260200190600190039081610e1b5790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b8152602081019490945283015250606081019290925250919050565b610e796117a9565b6040805160008082526020820190925281610eaa565b610e976117fe565b815260200190600190039081610e8f5790505b5060408051600180825281830190925291925060009190816020015b610ece61183b565b815260200190600190039081610ec65790505090508581600081518110610ef757610ef761265a565b60200260200101819052506040518060800160405280856001600160801b031916815260200183815260200182815260200186815250925050509392505050565b610f406117a9565b604080516001808252818301909252600091816020015b610f5f6117fe565b815260200190600190039081610f575790505090508381600081518110610f8857610f8861265a565b60209081029190910181019190915260408051600080825292810190915281610fc7565b610fb461183b565b815260200190600190039081610fac5790505b5090506040518060800160405280856001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b6110166117a9565b6040518060800160405280836001600160801b0319168152602001858152602001848152602001600060405180606001604052908160008201805461066f90612670565b6110626117a9565b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b81526020810194909452830191909152606082015290565b6110a16117a9565b60405180608001604052806000805160206126ab8339815191526001600160801b031916815260200184815260200183815260200160006040518060600160405290816000820180546108f290612670565b6110fb6117a9565b604080516000808252602082019092528161112c565b6111196117fe565b8152602001906001900390816111115790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200182815260200184815260200160006040518060600160405290816000820180546108f290612670565b6111896117a9565b60408051600080825260208201909252816111ba565b6111a76117fe565b81526020019060019003908161119f5790505b50604080516080810182526fb8e2054f8a912367e38a22ce773328ff60801b815260208101929092528101949094525050606082015290565b6111fb6117a9565b604080516000808252602082019092528161122c565b6112196117fe565b8152602001906001900390816112115790505b5060408051600180825281830190925291925060009190816020015b61125061183b565b81526020019060019003908161124857905050905084816000815181106112795761127961265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001858152509250505092915050565b6112cf6117a9565b604080516001808252818301909252600091816020015b6112ee6117fe565b8152602001906001900390816112e657905050905082816000815181106113175761131761265a565b60209081029190910181019190915260408051600080825292810190915281611356565b61134361183b565b81526020019060019003908161133b5790505b50905060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461066f90612670565b6113b36117a9565b60408051600080825260208201909252816113e4565b6113d161183b565b8152602001906001900390816113c95790505b50604080516080810182526001600160801b03199095168552602085019690965294830194909452506060810191909152919050565b6114226117a9565b604080516001808252818301909252600091816020015b6114416117fe565b815260200190600190039081611439579050509050838160008151811061146a5761146a61265a565b6020908102919091010152604080516001808252818301909252600091816020015b61149461183b565b81526020019060019003908161148c57905050905083816000815181106114bd576114bd61265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b0319168152602001838152602001828152602001600060405180606001604052908160008201805461045990612670565b6115226117a9565b50604080516080810182526001600160801b03199092168252602082019490945292830191909152606082015290565b61155a6117a9565b604080516001808252818301909252600091816020015b6115796117fe565b81526020019060019003908161157157905050905085816000815181106115a2576115a261265a565b6020908102919091010152604080516001808252818301909252600091816020015b6115cc61183b565b8152602001906001900390816115c457905050905085816000815181106115f5576115f561265a565b60200260200101819052506040518060800160405280856001600160801b03191681526020018381526020018281526020018681525092505050949350505050565b61163f6117a9565b6040805160008082526020820190925281611670565b61165d6117fe565b8152602001906001900390816116555790505b5090506040518060800160405280846001600160801b0319168152602001828152602001858152602001600060405180606001604052908160008201805461066f90612670565b6116bf6117a9565b604080516001808252818301909252600091816020015b6116de6117fe565b8152602001906001900390816116d657905050905084816000815181106117075761170761265a565b6020908102919091010152604080516001808252818301909252600091816020015b61173161183b565b815260200190600190039081611729579050509050848160008151811061175a5761175a61265a565b602002602001018190525060405180608001604052806000805160206126ab8339815191526001600160801b031916815260200183815260200182815260200185815250925050509392505050565b604051806080016040528060006001600160801b031916815260200160608152602001606081526020016117f9604051806060016040528060608152602001600015158152602001606081525090565b905290565b6040805160c08101909152806000815260200160008152602001600015158152602001600015158152602001600015158152602001606081525090565b6040805160e0810190915280600081526000602082018190526040820181905260608083018290526080830182905260a083019190915260c09091015290565b634e487b7160e01b600052604160045260246000fd5b60405160e081016001600160401b03811182821017156118b3576118b361187b565b60405290565b60405160c081016001600160401b03811182821017156118b3576118b361187b565b604051601f8201601f191681016001600160401b03811182821017156119035761190361187b565b604052919050565b80356005811061191a57600080fd5b919050565b80356001600160801b03198116811461191a57600080fd5b8035801515811461191a57600080fd5b600082601f83011261195857600080fd5b81356001600160401b038111156119715761197161187b565b611984601f8201601f19166020016118db565b81815284602083860101111561199957600080fd5b816020850160208301376000918101602001919091529392505050565b600060e082840312156119c857600080fd5b6119d0611891565b90506119db8261190b565b81526119e96020830161191f565b60208201526119fa6040830161191f565b604082015260608201356060820152611a1560808301611937565b6080820152611a2660a08301611937565b60a082015260c08201356001600160401b03811115611a4457600080fd5b611a5084828501611947565b60c08301525092915050565b60008060408385031215611a6f57600080fd5b82356001600160401b03811115611a8557600080fd5b611a91858286016119b6565b925050611aa06020840161191f565b90509250929050565b634e487b7160e01b600052602160045260246000fd5b6000815180845260005b81811015611ae557602081850181015186830182015201611ac9565b506000602082860101526020601f19601f83011685010191505092915050565b600081518084526020808501808196506005915083821b810183870160005b86811015611bc5578383038a52815160e08151878110611b4657611b46611aa9565b8552818801516001600160801b03191688860152604080830151611b75828801826001600160801b0319169052565b50506060828101519086015260808083015115159086015260a08083015115159086015260c091820151918501819052611bb181860183611abf565b9b88019b9450505090850190600101611b24565b509098975050505050505050565b6000815160608452611be86060850182611abf565b905060208301511515602085015260408301518482036040860152611c0d8282611abf565b95945050505050565b6000602080835260a08084016001600160801b0319865116838601528286015160806040818189015283835180865260c09550858a019150858160051b8b0101888601955060005b82811015611cd5578b820360bf190184528651805160068110611c8357611c83611aa9565b8352808b01518b8401528581015115158684015260608082015115159084015286810151151587840152890151898301899052611cc289840182611abf565b978b0197948b0194925050600101611c5e565b50838c01519850601f199750878b82030160608c0152611cf5818a611b05565b985050505050606088015192508387860301818801525050611d178382611bd3565b9695505050505050565b600060208284031215611d3357600080fd5b81356001600160401b03811115611d4957600080fd5b611d55848285016119b6565b949350505050565b600060c08284031215611d6f57600080fd5b611d776118b9565b9050813560068110611d8857600080fd5b815260208281013590820152611da060408301611937565b6040820152611db160608301611937565b6060820152611dc260808301611937565b608082015260a08201356001600160401b03811115611de057600080fd5b611dec84828501611947565b60a08301525092915050565b600060608284031215611e0a57600080fd5b604051606081016001600160401b038282108183111715611e2d57611e2d61187b565b816040528293508435915080821115611e4557600080fd5b611e5186838701611947565b8352611e5f60208601611937565b60208401526040850135915080821115611e7857600080fd5b50611e8585828601611947565b6040830152505092915050565b600080600060608486031215611ea757600080fd5b83356001600160401b0380821115611ebe57600080fd5b611eca87838801611d5d565b94506020860135915080821115611ee057600080fd5b50611eed86828701611df8565b925050611efc6040850161191f565b90509250925092565b60006001600160401b03821115611f1e57611f1e61187b565b5060051b60200190565b600082601f830112611f3957600080fd5b81356020611f4e611f4983611f05565b6118db565b82815260059290921b84018101918181019086841115611f6d57600080fd5b8286015b84811015611fac5780356001600160401b03811115611f905760008081fd5b611f9e8986838b0101611d5d565b845250918301918301611f71565b509695505050505050565b600060208284031215611fc957600080fd5b81356001600160401b03811115611fdf57600080fd5b611d5584828501611f28565b600082601f830112611ffc57600080fd5b8135602061200c611f4983611f05565b82815260059290921b8401810191818101908684111561202b57600080fd5b8286015b84811015611fac5780356001600160401b0381111561204e5760008081fd5b61205c8986838b01016119b6565b84525091830191830161202f565b60008060006060848603121561207f57600080fd5b83356001600160401b038082111561209657600080fd5b611eca87838801611feb565b600080604083850312156120b557600080fd5b82356001600160401b038111156120cb57600080fd5b611a9185828601611f28565b600080604083850312156120ea57600080fd5b82356001600160401b038082111561210157600080fd5b61210d86838701611f28565b9350602085013591508082111561212357600080fd5b5061213085828601611df8565b9150509250929050565b60008060006060848603121561214f57600080fd5b83356001600160401b038082111561216657600080fd5b61217287838801611d5d565b9450602086013591508082111561218857600080fd5b50611eed868287016119b6565b600080604083850312156121a857600080fd5b82356001600160401b03808211156121bf57600080fd5b61210d86838701611d5d565b6000806000606084860312156121e057600080fd5b83356001600160401b03808211156121f757600080fd5b611eca878388016119b6565b6000806040838503121561221657600080fd5b82356001600160401b0381111561222c57600080fd5b611a9185828601611d5d565b60008060006060848603121561224d57600080fd5b83356001600160401b038082111561226457600080fd5b61227087838801611f28565b9450602086013591508082111561228657600080fd5b50611eed86828701611feb565b6000806000606084860312156122a857600080fd5b83356001600160401b03808211156122bf57600080fd5b6122cb87838801611f28565b945060208601359150808211156122e157600080fd5b6122ed87838801611feb565b9350604086013591508082111561230357600080fd5b5061231086828701611df8565b9150509250925092565b6000806040838503121561232d57600080fd5b82356001600160401b038082111561234457600080fd5b61235086838701611f28565b9350602085013591508082111561236657600080fd5b5061213085828601611feb565b60006020828403121561238557600080fd5b81356001600160401b0381111561239b57600080fd5b611d5584828501611feb565b600080604083850312156123ba57600080fd5b82356001600160401b03808211156123d157600080fd5b61210d86838701611feb565b600080604083850312156123f057600080fd5b82356001600160401b038082111561240757600080fd5b61210d868387016119b6565b60006020828403121561242557600080fd5b81356001600160401b0381111561243b57600080fd5b611d5584828501611d5d565b60008060006060848603121561245c57600080fd5b83356001600160401b038082111561247357600080fd5b611eca87838801611f28565b6000806040838503121561249257600080fd5b82356001600160401b03808211156124a957600080fd5b6124b586838701611d5d565b935060208501359150808211156124cb57600080fd5b50612130858286016119b6565b600080600080608085870312156124ee57600080fd5b84356001600160401b038082111561250557600080fd5b61251188838901611f28565b9550602087013591508082111561252757600080fd5b61253388838901611feb565b9450604087013591508082111561254957600080fd5b5061255687828801611df8565b9250506125656060860161191f565b905092959194509250565b6000806000806080858703121561258657600080fd5b84356001600160401b038082111561259d57600080fd5b6125a988838901611d5d565b955060208701359150808211156125bf57600080fd5b612533888389016119b6565b600080604083850312156125de57600080fd5b82356001600160401b038111156125f457600080fd5b611a9185828601611feb565b60008060006060848603121561261557600080fd5b83356001600160401b038082111561262c57600080fd5b61263887838801611d5d565b9450602086013591508082111561264e57600080fd5b6122ed878388016119b6565b634e487b7160e01b600052603260045260246000fd5b600181811c9082168061268457607f821691505b6020821081036126a457634e487b7160e01b600052602260045260246000fd5b5091905056feb8e2054f8a912367e38a22ce773328ff8aabf8082c4120bad9ef085e1dbf29a7a26469706673582212204b8f7a5a5ba91b3206ed347b001f93e82488edcd35d9097494101ab2a303678a64736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
