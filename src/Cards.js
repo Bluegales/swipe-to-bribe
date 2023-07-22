@@ -57,7 +57,10 @@ function Cards () {
 
   // set last direction and decrease current index
   const swiped = (direction, nameToDelete, index) => {
-    setLastDirection(direction)
+    if (direction === "left" || direction === "skipped")
+      setLastDirection("skipped");
+    else
+      setLastDirection("bribed");
     updateCurrentIndex(index - 1)
   }
 
@@ -78,7 +81,7 @@ function Cards () {
 
 
   return (
-    <div classNames="blocks">
+    <div classNames="blocks middleblock">
       <link
         href='https://fonts.googleapis.com/css?family=Damion&display=swap'
         rel='stylesheet'
@@ -87,7 +90,11 @@ function Cards () {
         href='https://fonts.googleapis.com/css?family=Alatsi&display=swap'
         rel='stylesheet'
       />
-      <h1>SwipeRight2Bribe</h1>
+      <link 
+        href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'
+        rel='stylesheet' 
+      />
+      <div className="space"></div>
       <div className='cardContainer'>
         {db.map((character, index) => (
           <TinderCard
@@ -107,17 +114,22 @@ function Cards () {
         ))}
       </div>
       <div className='buttons'>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Swipe left!</button>
-        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Swipe right!</button>
+        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('left')}>Skip</button>
+        <button style={{ backgroundColor: !canSwipe && '#c3c4d3' }} onClick={() => swipe('right')}>Bribe</button>
       </div>
       {lastDirection ? (
         <h2 key={lastDirection} className='infoText'>
-          You swiped {lastDirection}
+          You {lastDirection}!
         </h2>
       ) : (
-        <h2 className='infoText'>
-          Swipe a card or press a button to get Restore Card button visible!
-        </h2>
+        <div className='twoInfo'>
+          <h3 className='infoText'>
+            Swipe left - Skip
+          </h3>
+          <h3 className='infoText'>
+            Bribe - Swipe right
+          </h3>
+        </div>
       )}
     </div>
   )

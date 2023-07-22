@@ -1,33 +1,45 @@
 #root {
   text-align: center;
   display: flex;
-  width: 100vw;
   min-height: 100vh;
   overflow: hidden;
   /* background: linear-gradient(black, #999); */
-  background: ghostwhite;
+  background-color: ghostwhite;
+  font-family: "Hack", sans-serif;
 }
 
 * {
   user-select: none;
 }
 
-.app {
+.row {
   display: flex;
   flex-direction: row;
 }
 
-.blocks {
-  flex: 1 1 0px;
-  border: 1px solid black;
+.leftblock {
+  border-right: 1px dashed;
+  border-image:  linear-gradient(
+    to bottom, 
+    black, 
+    rgba(0, 0, 0, 0)
+  ) 1 100%;
+  min-width: 25vw;
+}
+
+.rightblock {
+  border-left: 1px dashed;
+  border-image:  linear-gradient(
+    to bottom, 
+    black, 
+    rgba(0, 0, 0, 0)
+  ) 1 100%;
+  min-width: 25vw;
 }
 
 .row {
   flex-direction: row !important;
-}
-
-.row>* {
-  margin: 5px;
+  margin: auto;
 }
 
 h1 {
@@ -39,19 +51,36 @@ h2 {
   color: black;
 }
 
+.explain {
+  display:flex;
+}
+
+.twoInfo {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .swipe {
   position: absolute;
+}
+
+.space {
+  height: 5vh;
 }
 
 .cardContainer {
   width: 90vw;
   max-width: 260px;
   height: 300px;
+  margin-top: 25%;
+  margin: auto;
 }
 
 .card {
-  position: relative;
-  background-color: ghostwhite;
+  position:absolute;
+  background-color: white;
   border: black;
   border-style:double;
   border-width:thin;
@@ -62,6 +91,17 @@ h2 {
   /* border-radius: 20px; */
   background-size: cover;
   background-position: center;
+}
+
+.card:hover {
+  position: relative;
+  width: 350px;
+  height: 310px;
+  background: white;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+  color: white;
+  box-shadow: 20px 20px rgba(0,0,0);
+  transition: all .4s ease;
 }
 
 .cardContent {
@@ -81,21 +121,25 @@ h2 {
 }
 
 .infoText {
-  width: 100%;
   justify-content: center;
   display: flex;
   color: black;
   animation-name: popup;
   animation-duration: 800ms;
+  margin: auto;
+  margin-top: 5%;
 }
 
 .buttons {
-  margin: 20px;
   display: flex;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 5%;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (max-width: 625px) {
+@media (max-width: 800px) {
   .buttons {
     flex-direction: column;
   }
@@ -104,20 +148,29 @@ h2 {
 .buttons button {
   flex-shrink: 0;
   padding: 10px;
-  border-radius: 5px;
-  border: none;
+  border: black;
+  border-style:double;
+  border-width:thin;
   color: black;
   font-size: 18px;
-  background-color: ghostwhite;
+  font-weight:bold;
+  background-color: white;
   transition: 200ms;
   margin: 10px;
-  font-weight: bolder;
   width: 160px;
-  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10);
+  /* box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10); */
 }
 
 .buttons button:hover {
   transform: scale(1.05);
+  color: black;
+  position: relative;
+  border: black;
+  border-style:double;
+  border-width:thin;
+  background: ghostwhite;
+  box-shadow: 5px 5px rgba(0,0,0);
+  transition: all .4s ease;
 }
 
 @keyframes popup {

@@ -1,9 +1,10 @@
 function LeftSide () {  
     return (
-      <div className="blocks">
+      <div className="blocks leftblock">
         <img/>
-        <h1>Logo Placeholder</h1>
-        <h2>Explanation</h2>
+        <h1>SwipeRight2Bribe</h1>
+        <h3 className="explain">Explanation :</h3>
+        <p></p>
       </div>
     )
 }

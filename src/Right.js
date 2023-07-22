@@ -10,7 +10,7 @@ async function signMeta () {
 
 function RightSide () {  
     return (
-      <div className="blocks">
+      <div className="blocks rightblock">
         <SismoButt />
         <button className="MetaMask" onClick={signMeta}>Connect Wallet</button>
         <h3 className="MetaMask">Wallet Address: </h3>
