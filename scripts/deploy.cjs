@@ -11,7 +11,7 @@ async function main() {
 
   console.log('GreeterSetup address:', GreeterSetup.address);
 
-  const getDAO = await hre.ethers.getContractFactory('IDAO');
+  const getDAO = await hre.ethers.getContractFactory('dDAO');
   const dao = await getDAO.deploy();
 
   const getGreeterPlugin = await hre.ethers.getContractFactory('GreeterPlugin');

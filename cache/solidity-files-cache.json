@@ -1,43 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/GreeterPlugin.sol": {
-      "lastModificationDate": 1689964571208,
-      "contentHash": "556075e5282b9c4e2e3ba93c83b55fd6",
-      "sourceName": "contracts/GreeterPlugin.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@aragon/osx/core/plugin/Plugin.sol"
-      ],
-      "versionPragmas": [
-        "0.8.17"
-      ],
-      "artifacts": [
-        "GreeterPlugin"
-      ]
-    },
     "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/node_modules/@aragon/osx/core/plugin/Plugin.sol": {
       "lastModificationDate": 1689965693464,
       "contentHash": "5a9bb157faae62ed79fa3222d27ccdcc",
@@ -327,45 +290,6 @@
       ],
       "artifacts": [
         "Context"
-      ]
-    },
-    "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/GreeterSetup.sol": {
-      "lastModificationDate": 1689964578461,
-      "contentHash": "4752ac5d8999da592bebac0877dd1dbd",
-      "sourceName": "contracts/GreeterSetup.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@aragon/osx/core/permission/PermissionLib.sol",
-        "@aragon/osx/framework/plugin/setup/PluginSetup.sol",
-        "./GreeterPlugin.sol"
-      ],
-      "versionPragmas": [
-        "0.8.17"
-      ],
-      "artifacts": [
-        "GreeterSetup"
       ]
     },
     "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/node_modules/@aragon/osx/framework/plugin/setup/PluginSetup.sol": {
@@ -841,6 +765,80 @@
       ],
       "artifacts": [
         "StorageSlot"
+      ]
+    },
+    "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/PromiseEscrow.sol": {
+      "lastModificationDate": 1690004206738,
+      "contentHash": "a219b9c72cc0dda457fa8bc009ae0ef9",
+      "sourceName": "contracts/PromiseEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PromiseEscrow"
+      ]
+    },
+    "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1689965694080,
+      "contentHash": "eb7e61db29f31d88b3c1cef1b063d338",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC721"
       ]
     }
   }
