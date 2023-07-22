@@ -21,31 +21,31 @@ contract SismoVerifier is SismoConnect {
         )
     {}
 
-    // function verifyCitizen(bytes memory response, bytes memory message) public {
-    //     ClaimRequest[] memory claims = new ClaimRequest[](1);
-    //     claims[0] = buildClaim({groupId: 0x6e41539fdb94fe30e82d46d7f664860f});
+    function verifyCitizen(bytes memory response, bytes memory message) public {
+        ClaimRequest[] memory claims = new ClaimRequest[](1);
+        claims[0] = buildClaim({groupId: 0x6e41539fdb94fe30e82d46d7f664860f});
 
-    //     // verify the response regarding our original request
-    //     SismoConnectVerifiedResult memory result = verify({
-    //         responseBytes: response,
-    //         claims: claims,
-    //         signature: buildSignature({message: message})
-    //     });
+        // verify the response regarding our original request
+        SismoConnectVerifiedResult memory result = verify({
+            responseBytes: response,
+            claims: claims,
+            signature: buildSignature({message: message})
+        });
 
-    //     emit ResponseVerified(result);
-	// }
+        emit ResponseVerified(result);
+	}
 
-    // function verifyPolitician(bytes memory response, bytes memory message) public {
-    //     ClaimRequest[] memory claims = new ClaimRequest[](1);
-    //     claims[0] = buildClaim({groupId: 0xe57abdb9acb2d308d4ec1a12833e1c9f});
+    function verifyPolitician(bytes memory response, bytes memory message) public {
+        ClaimRequest[] memory claims = new ClaimRequest[](1);
+        claims[0] = buildClaim({groupId: 0xe57abdb9acb2d308d4ec1a12833e1c9f});
 
-    //     // verify the response regarding our original request
-    //     SismoConnectVerifiedResult memory result = verify({
-    //         responseBytes: response,
-    //         claims: claims,
-    //         signature: buildSignature({message: message})
-    //     });
+        // verify the response regarding our original request
+        SismoConnectVerifiedResult memory result = verify({
+            responseBytes: response,
+            claims: claims,
+            signature: buildSignature({message: message})
+        });
 
-    //     emit ResponseVerified(result);
-	// }
+        emit ResponseVerified(result);
+	}
 }
