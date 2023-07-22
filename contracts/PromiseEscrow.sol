@@ -12,6 +12,8 @@ import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3In
 // @todo remove NFT collection placeholders in constructor and the functions
 // @todo which currency to use?
 // @todo do I have to store the promises? take look at insurance UMA contract, they do it differently
+// @todo add UMA more-than-yes-or-no check
+// @todo add upper limit for staking
 contract PromiseEscrow {
 	using SafeERC20 for IERC20;
     IERC721 public collectionA;
@@ -19,6 +21,7 @@ contract PromiseEscrow {
 	IERC20 public defaultCurrency;
 	OptimisticOracleV3Interface public immutable oo;
 	bytes32 public immutable defaultIdentifier;
+	uint64 public constant oneDayInBlocks = 7200;
 
     struct Voting {
         uint totalVotes;
@@ -73,9 +76,10 @@ contract PromiseEscrow {
 
     function voteForPromise(bytes32 promiseId, bool vote) external {
 		require(promises[promiseId].politician != address(0), "Promise does not exist");
+		require(promises[promiseId].stake > 0, "No ETH deposited for this promise");
 		require(promises[promiseId].endBlock > block.number, "Voting period has not started yet");
+		require(promises[promiseId].endBlock + oneDayInBlocks < block.number, "Voting period has ended");
 		// @todo add SISMO national group-authentification check
-		// @todo replace/add UMA check
         require(collectionB.balanceOf(msg.sender) > 0, "Must own an NFT from collection B");
 
 		Voting storage curr = votes[promiseId];
@@ -105,7 +109,7 @@ contract PromiseEscrow {
 			address(this),
 			// @todo make use of the escalationManager
 			address(0),
-			7200,
+			oneDayInBlocks,
 			defaultCurrency,
 			bond,
 			defaultIdentifier,
@@ -126,12 +130,13 @@ contract PromiseEscrow {
 		require(promises[promiseId].politician != address(0), "Promise does not exist");
         require(promises[promiseId].stake > 0, "No ETH deposited for this promise");
 		// @todo replace 100 with appropriate voting time
-		require(block.number >= promises[promiseId].endBlock + 100, "Voting period has not ended yet");
+		require(block.number >= promises[promiseId].endBlock + oneDayInBlocks, "Voting period has not ended yet");
+		require(promises[promiseId].endBlock > block.number, "Voting period has not started yet");
 
         Voting storage curr = votes[promiseId];
         require(curr.totalVotes > 0, "No votes cast for this promise");
 
-        if ((curr.positiveVotes * 2) >= curr.totalVotes) {
+        if ((curr.positiveVotes * 2) >= curr.totalVotes || promises[promiseId].resolved) {
         	require(msg.sender == promises[promiseId].politician, "Only the promise's creator can withdraw");
             payable(msg.sender).transfer(promises[promiseId].stake);
         } else {
