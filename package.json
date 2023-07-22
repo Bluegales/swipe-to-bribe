@@ -3,11 +3,13 @@
   "devDependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.6",
     "chai": "^4.3.7",
+    "chai-bn": "^0.3.1",
+    "chai-events": "^0.0.3",
     "ethereum-waffle": "^4.0.10",
-    "ethers": "^5.7.2"
+    "hardhat": "^2.16.1",
+    "mocha": "^10.2.0"
   },
   "dependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@sismo-core/sismo-connect-solidity": "^0.0.19",
     "@uma/core": "^2.56.0"
   }

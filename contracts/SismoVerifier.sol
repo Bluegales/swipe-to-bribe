@@ -9,42 +9,43 @@ contract SismoVerifier is SismoConnect {
 
     event ResponseVerified(SismoConnectVerifiedResult result);
 
+    // appId of the Sismo Connect app
+    bytes16 private _appId = 0x32403ced4b65f2079eda77c84e7d2be6;
+    // allow proofs made from impersonating accounts to be verified
+    // it should be set to false for production
+    bool private _isImpersonationMode = true;
+
     constructor()
         SismoConnect(
-            buildConfig({
-                appId: 0xf4977993e52606cfd67b7a1cde717069,
-                // For development purposes insert when using proofs that contains impersonation
-                // Never use this in production
-                isImpersonationMode: true
-            })
+            buildConfig(_appId, _isImpersonationMode)
         )
     {}
 
-    function verifyCitizen(bytes memory response, bytes memory message) public {
-        ClaimRequest[] memory claims = new ClaimRequest[](1);
-        claims[0] = buildClaim({groupId: 0x6e41539fdb94fe30e82d46d7f664860f});
+    // function verifyCitizen(bytes memory response, bytes memory message) public {
+    //     ClaimRequest[] memory claims = new ClaimRequest[](1);
+    //     claims[0] = buildClaim({groupId: 0x6e41539fdb94fe30e82d46d7f664860f});
 
-        // verify the response regarding our original request
-        SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
-            claims: claims,
-            signature: buildSignature({message: message})
-        });
+    //     // verify the response regarding our original request
+    //     SismoConnectVerifiedResult memory result = verify({
+    //         responseBytes: response,
+    //         claims: claims,
+    //         signature: buildSignature({message: message})
+    //     });
 
-        emit ResponseVerified(result);
-	}
+    //     emit ResponseVerified(result);
+	// }
 
-    function verifyPolitician(bytes memory response, bytes memory message) public {
-        ClaimRequest[] memory claims = new ClaimRequest[](1);
-        claims[0] = buildClaim({groupId: 0xe57abdb9acb2d308d4ec1a12833e1c9f});
+    // function verifyPolitician(bytes memory response, bytes memory message) public {
+    //     ClaimRequest[] memory claims = new ClaimRequest[](1);
+    //     claims[0] = buildClaim({groupId: 0xe57abdb9acb2d308d4ec1a12833e1c9f});
 
-        // verify the response regarding our original request
-        SismoConnectVerifiedResult memory result = verify({
-            responseBytes: response,
-            claims: claims,
-            signature: buildSignature({message: message})
-        });
+    //     // verify the response regarding our original request
+    //     SismoConnectVerifiedResult memory result = verify({
+    //         responseBytes: response,
+    //         claims: claims,
+    //         signature: buildSignature({message: message})
+    //     });
 
-        emit ResponseVerified(result);
-	}
+    //     emit ResponseVerified(result);
+	// }
 }
