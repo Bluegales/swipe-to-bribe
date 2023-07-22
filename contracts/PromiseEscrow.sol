@@ -6,7 +6,11 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/implementation/ClaimData.sol";
 import "@uma/core/contracts/optimistic-oracle-v3/interfaces/OptimisticOracleV3Interface.sol";
 
-// import "./SismoVerifier.sol";
+interface SismoVerifier
+{
+    function verifyCitizen(bytes memory responseSismo, bytes memory message) external;
+    function verifyPolitician(bytes memory message) external;
+}
 
 // @todo add events for all functions
 // @todo especially emit promiseCreated event
@@ -44,13 +48,7 @@ contract PromiseEscrow
     OptimisticOracleV3Interface public immutable oo;
     bytes32 public immutable                     defaultIdentifier;
     uint64 public constant                       oneDayInBlocks = 7200;
-    // SismoVerifier public                         sismoVerifier;
-
-    // struct Voting {
-    //     uint                     totalVotes;
-    //     uint                     positiveVotes;
-    //     mapping(address => bool) voters;
-    // }
+    SismoVerifier public                         sismoVerifier;
 
     struct Promise
     {
@@ -62,26 +60,21 @@ contract PromiseEscrow
         bool    resolved;
     }
 
-    struct AssertedPromise {
+    struct AssertedPromise
+    {
         address asserter; // Address of the asserter used for reward payout.
         bytes32 promiseId; // Identifier for promises mapping.
     }
 
-    // mapping(bytes32 => Voting) public  votes;
     mapping(bytes32 => Promise)         public promises;
     mapping(bytes32 => AssertedPromise) public assertedPromises; // Maps assertionId to Assertedpromise.
 
-    // mapping(bytes32 => bytes32) public assertions;
-
-    // address payable constant BURN_ADDRESS = payable(0x000000000000000000000000000000000000dEaD);
-
-    constructor(address _currency, address _optimisticOracleV3)
+    constructor(address _currency, address _optimisticOracleV3, address _sismoVerifier)
     {
-        // collectionA = IERC721(_collectionA);
-        // collectionB = IERC721(_collectionB);
         currency = IERC20(_currency);
         oo = OptimisticOracleV3Interface(_optimisticOracleV3);
         defaultIdentifier = oo.defaultIdentifier();
+        sismoVerifier = SismoVerifier(_sismoVerifier);
     }
 
     function getPromise(bytes32 promiseId) public view returns (Promise memory) {
@@ -90,7 +83,7 @@ contract PromiseEscrow
 
     function createPromise(string memory statement) public returns (bytes32 promiseId)
     {
-        // sismoVerifier.verifyPolitician(abi.encodePacked("Creating promise ", statement));
+        sismoVerifier.verifyPolitician(abi.encodePacked("Creating promise ", statement));
 
         promiseId = keccak256(abi.encode(statement, msg.sender));
         require(promises[promiseId].politician == address(0), "promise already exists");
@@ -108,7 +101,7 @@ contract PromiseEscrow
     // @todo restrict possible payment amounts
     function    stakeForPromise(bytes32 promiseId, bytes memory responseSismo) external payable
     {
-        // sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked("Staking ", msg.value, " for promise ", promises[promiseId].statement));
+        sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked("Staking ", msg.value, " for promise ", promises[promiseId].statement));
 
         require(promises[promiseId].politician != address(0), "Promise does not exist");
         require(msg.value > 0, "Must send ETH to stake for a promise");
@@ -117,7 +110,8 @@ contract PromiseEscrow
     }
 
 
-    function assertPromise(bytes32 promiseId, uint32 assertedOutcome) public returns (bytes32 assertionId) {
+    function assertPromise(bytes32 promiseId, uint32 assertedOutcome) public returns (bytes32 assertionId)
+    {
         Promise storage promise_ = promises[promiseId];
         require(promise_.politician != address(0), "promise does not exist");
         require(assertedOutcome > 0 && assertedOutcome <= 100, "percentage outside valid range");
@@ -159,7 +153,8 @@ contract PromiseEscrow
 
     function    assertionDisputedCallback(bytes32 assertionId) public {}
 
-    function _composeClaim(uint32 count, string memory description) pure internal returns (bytes memory) {
+    function _composeClaim(uint32 count, string memory description) pure internal returns (bytes memory)
+    {
         return
             abi.encodePacked
             (
@@ -170,7 +165,8 @@ contract PromiseEscrow
             );
     }
 
-    function _assertTruthWithDefaults(bytes memory claim, uint256 bond) internal returns (bytes32 assertionId) {
+    function _assertTruthWithDefaults(bytes memory claim, uint256 bond) internal returns (bytes32 assertionId)
+    {
         assertionId = oo.assertTruth(
             claim,
             msg.sender, // Asserter
