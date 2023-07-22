@@ -34,11 +34,11 @@ contract PromiseEscrow
     struct Promise
     {
         address politician;
-        string statement;
+        string  statement;
         uint256 stake;
-        uint32 assertedOutcome;
-        uint32 payedOutcome;
-        bool resolved;
+        uint32  assertedOutcome;
+        uint32  payedOutcome;
+        bool    resolved;
     }
 
     struct AssertedPromise {
@@ -47,7 +47,7 @@ contract PromiseEscrow
     }
 
     // mapping(bytes32 => Voting) public  votes;
-    mapping(bytes32 => Promise) public promises;
+    mapping(bytes32 => Promise)         public promises;
     mapping(bytes32 => AssertedPromise) public assertedPromises; // Maps assertionId to Assertedpromise.
 
     // mapping(bytes32 => bytes32) public assertions;
@@ -63,7 +63,7 @@ contract PromiseEscrow
         defaultIdentifier = oo.defaultIdentifier();
     }
 
-    function getpromise(bytes32 promiseId) public view returns (Promise memory) {
+    function getPromise(bytes32 promiseId) public view returns (Promise memory) {
         return promises[promiseId];
     }
 
@@ -96,13 +96,13 @@ contract PromiseEscrow
     }
 
 
-    function assertpromise(bytes32 promiseId, uint32 assertedOutcome) public returns (bytes32 assertionId) {
+    function assertPromise(bytes32 promiseId, uint32 assertedOutcome) public returns (bytes32 assertionId) {
         Promise storage promise_ = promises[promiseId];
         require(promise_.politician != address(0), "promise does not exist");
         require(outcomePercentage > 0 && outcomePercentage <= 100, "percentage outside valid range");
-        
+
         require(promise_.assertedOutcome == bytes32(0), "Assertion active or resolved");
-        promise_.assertedOutcome = assertedOutcomeId;
+        promise_.assertedOutcome = assertedOutcome;
 
         uint256 bond = oo.getMinimumBond(address(defaultCurrency));
         bytes memory claim = _composeClaim(assertedOutcome, promise_.statement);
@@ -117,7 +117,7 @@ contract PromiseEscrow
         assertionId = _assertTruthWithDefaults(claim, bond);
 
         // Store the asserter and promiseId for the assertionResolvedCallback.
-        assertedpromises[assertionId] = Assertedpromise({ asserter: msg.sender, promiseId: promiseId });
+        assertedPromises[assertionId] = Assertedpromise({ asserter: msg.sender, promiseId: promiseId });
 
         emit promiseAsserted(promiseId, assertedOutcome, assertionId);
     }
@@ -132,17 +132,15 @@ contract PromiseEscrow
             promise_.resolved = true;
             if (promise_.stake > 0) {
                 uint265 amount = (promise_.assertedOutcome - promise_.payedOutcome) * promise_.stake;
+                promise_.payedOutcome = promise_.assertedOutcome;
                 currency.safeTransfer(promise_.politician, amount);
             }
-            emit promiseResolved(assertedpromises[assertionId].promiseId);
+            emit promiseResolved(assertedPromises[assertionId].promiseId);
         }
+        promise_.assertedOutcome = 0;
     }
 
     function    assertionDisputedCallback(bytes32 assertionId) public {}
-
-    function _getCollateralWhitelist() internal view returns (AddressWhitelist) {
-        return AddressWhitelist(finder.getImplementationAddress(OracleInterfaces.CollateralWhitelist));
-    }
 
     function _composeClaim(uint32 count, bytes memory description) internal view returns (bytes memory) {
         return
