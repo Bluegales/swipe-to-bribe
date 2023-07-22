@@ -7,7 +7,7 @@ import {
   ClaimType,
 } from "@sismo-core/sismo-connect-react";
 
-function SismoButt() {
+function SismoButt( sismoResponse ) {
   return (
     <SismoConnectButton
       config={{
@@ -46,11 +46,11 @@ function SismoButt() {
       signature={{ message: "I vote Yes to Privacy" }}
       // retrieve the Sismo Connect Reponse from the user's Sismo data vault
       onResponse={async (response: SismoConnectResponse) => {
-        const res = await fetch("/api/verify", {
+        const sismoResponse = await fetch("/api/verify", {
           method: "POST",
           body: JSON.stringify(response),
         });
-        console.log(await res.json());
+        console.log(await sismoResponse.json());
       }}
       // reponse in bytes to call a contract
       // onResponseBytes={async (response: string) => {

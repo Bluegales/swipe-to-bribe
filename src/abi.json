@@ -1,0 +1,479 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_currency",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_optimisticOracleV3",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_sismoVerifier",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokensCreated",
+				"type": "uint256"
+			}
+		],
+		"name": "TokensCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokensRedeemed",
+				"type": "uint256"
+			}
+		],
+		"name": "TokensRedeemed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "payout",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "outcome1Tokens",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "outcome2Tokens",
+				"type": "uint256"
+			}
+		],
+		"name": "TokensSettled",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "assertedOutcome",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "assertionId",
+				"type": "bytes32"
+			}
+		],
+		"name": "promiseAsserted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "outcome1",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "outcome2",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "outcome1Token",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "outcome2Token",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reward",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "requiredBond",
+				"type": "uint256"
+			}
+		],
+		"name": "promiseInitialized",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			}
+		],
+		"name": "promiseResolved",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "assertedOutcome",
+				"type": "uint32"
+			}
+		],
+		"name": "assertPromise",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "assertionId",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "assertedPromises",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "asserter",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "assertionId",
+				"type": "bytes32"
+			}
+		],
+		"name": "assertionDisputedCallback",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "assertionId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bool",
+				"name": "assertedTruthfully",
+				"type": "bool"
+			}
+		],
+		"name": "assertionResolvedCallback",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "statement",
+				"type": "string"
+			}
+		],
+		"name": "createPromise",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "currency",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "defaultIdentifier",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			}
+		],
+		"name": "getPromise",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "politician",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "statement",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stake",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "assertedOutcome",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "payedOutcome",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bool",
+						"name": "resolved",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct PromiseEscrow.Promise",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oneDayInBlocks",
+		"outputs": [
+			{
+				"internalType": "uint64",
+				"name": "",
+				"type": "uint64"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oo",
+		"outputs": [
+			{
+				"internalType": "contract OptimisticOracleV3Interface",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "promises",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "politician",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "statement",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "stake",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint32",
+				"name": "assertedOutcome",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "payedOutcome",
+				"type": "uint32"
+			},
+			{
+				"internalType": "bool",
+				"name": "resolved",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "sismoVerifier",
+		"outputs": [
+			{
+				"internalType": "contract SismoVerifier",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes",
+				"name": "responseSismo",
+				"type": "bytes"
+			}
+		],
+		"name": "stakeForPromise",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	}
+]

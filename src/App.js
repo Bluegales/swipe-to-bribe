@@ -4,8 +4,8 @@ import Cards from './/Cards'
 import LeftSide from './Left'
 import RightSide from './Right'
 
-
 function App () {
+  
   return (
     <div className='row'>
       <LeftSide />
