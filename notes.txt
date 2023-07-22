@@ -1,7 +1,0 @@
-
-I need a smart contract with the following functionalities:
-
-- A function that allows any userX, whose wallet contains an NFT from the collection A, to add a string containing a statement to a list of strings.
-- A function that allows any userY, whose wallet contains an NFT from the collection B, to deposit ETH to the contract and assign the ETH to one of the strings.
-- A function that can be called after a certain time has passed between the creation of the string and the current time (blockheight can be used), that allows every userY that deposited ETH to the string to vote on the statement. The voting should be done by sending a transaction to the contract, that contains the string and a boolean value. The boolean value should be stored in a mapping, that maps the string to the boolean value. The boolean value should be true if the user voted for the statement and false if the user voted against the statement.
-- A function that allows the userX (creator of the statement-string) to withdraw the ETH that was assigned to the statement, if the majority of the votes are true. If the majority of the votes are false, the ETH should be sent to a burning address.
