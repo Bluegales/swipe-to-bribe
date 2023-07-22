@@ -693,8 +693,8 @@
       ]
     },
     "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/SismoVerifier.sol": {
-      "lastModificationDate": 1690036619861,
-      "contentHash": "a00905665c806412a211847d0b98bbda",
+      "lastModificationDate": 1690041563013,
+      "contentHash": "b79d6f3b33271a175ce3a38f1b0a95cb",
       "sourceName": "contracts/SismoVerifier.sol",
       "solcConfig": {
         "version": "0.8.17",
