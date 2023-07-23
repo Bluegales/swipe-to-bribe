@@ -8,6 +8,7 @@
     "@biconomy/bundler": "^3.0.0-alpha.0",
     "@biconomy/common": "^3.0.0-alpha.0",
     "@biconomy/core-types": "^3.0.0-alpha.0",
+    "@biconomy/paymaster": "^3.0.0-alpha.0",
     "@metamask/sdk": "^0.5.6",
     "@react-spring/web": "^9.5.5",
     "@sismo-core/sismo-connect-react": "^0.0.20",
@@ -20,6 +21,7 @@
     "react-ios-switch": "^0.1.19",
     "react-scripts": "5.0.1",
     "react-tinder-card": "^1.6.2",
+    "typescript": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

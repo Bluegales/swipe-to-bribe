@@ -1,8 +1,6 @@
-import React, { useState, useMemo, useRef, useContext } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import TinderCard from "react-tinder-card";
 import { config } from "dotenv";
-import { CONTRACT_ADDRESS, SISMO_CONST } from  './constants'
-import { UserContext } from './App';
 import { IBundler, Bundler } from "@biconomy/bundler";
 import {
   BiconomySmartAccount,
@@ -20,12 +18,7 @@ import {
 } from "@biconomy/paymaster";
 
 config();
-import { ethers } from 'ethers';
-import ABI from './abi.json'
-import { CONTRACT_ADDRESS, SISMO_CONST } from  './constants'
-import { UserContext } from './App';
 
-//we dont want to use this anymore
 const db = [
   {
     promise: "Some Things are gonna need to be done",
@@ -60,10 +53,8 @@ const db = [
 ];
 
 function Cards() {
-  const { address } = useContext(UserContext);
-  const { sismoResponse } = useContext(UserContext);
-  const [currentIndex, setCurrentIndex] = useState(db.length - 1);;
-  const [lastDirection, setLastDirection] = useState();;
+  const [currentIndex, setCurrentIndex] = useState(db.length - 1);
+  const [lastDirection, setLastDirection] = useState();
   let promiseArray = [];
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
@@ -144,21 +135,6 @@ function Cards() {
     return biconomySmartAccount;
   }
 
-  async function getPromise() {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
-    try {
-      const tx = await contract.promiseArr(0);
-      console.log((tx));
-      const promise = ethers.utils.toUtf8String(tx[2]);
-    } catch (error) {
-      console.log("Error while creating campaign: ", error);
-    }
-    return (promise);
-  } 
-
-  const promise = getPromise();
   // @note need the promise data here
   const createTransaction = async () => {
     const usdtAddress = "0xfad6367E97217cC51b4cd838Cc086831f81d38C2";
@@ -254,7 +230,7 @@ function Cards() {
               style={{ backgroundImage: "url(" + character.url + ")" }}
               className="card"
             >
-              <p></p>
+              <p>{character.promise}</p>
               <h3>{character.name}</h3>
             </div>
           </TinderCard>
