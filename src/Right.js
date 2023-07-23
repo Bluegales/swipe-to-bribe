@@ -6,13 +6,14 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import './App.css'
 
-function RightSide () { 
+function RightSide () {
     const [address, setAddress] = useState()
     const [sismoResponse, setSismoResponse] = useState(null);
 
+    
+
 
     async function signMeta () {
-        // const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
         const MMSDK = new MetaMaskSDK();
         const address = window.ethereum.request({ method: 'eth_requestAccounts', params: [] });
         setAddress(address);
@@ -31,7 +32,7 @@ function RightSide () {
         } catch (error) {
           console.log("Error while creating campaign: ", error);
         }
-    } 
+    }
 
     async function createContract() {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -48,7 +49,7 @@ function RightSide () {
         } catch (error) {
           console.log("Error while creating campaign: ", error);
         }
-    } 
+    }
 
     return (
       <div className="rightblock">
@@ -60,5 +61,5 @@ function RightSide () {
       </div>
     );
 }
-  
+
 export default RightSide
