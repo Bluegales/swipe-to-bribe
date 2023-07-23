@@ -1099,8 +1099,8 @@
       "artifacts": []
     },
     "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/PromiseEscrow.sol": {
-      "lastModificationDate": 1690063837244,
-      "contentHash": "59ac64ce5c26d50bafe8d356191dca20",
+      "lastModificationDate": 1690082942207,
+      "contentHash": "2d998e23410a96288b13103c5f2de38e",
       "sourceName": "contracts/PromiseEscrow.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -1174,8 +1174,8 @@
       ]
     },
     "/Users/luca/Desktop/ETHGlobal Paris/swipe-to-bribe/contracts/SismoVerifier.sol": {
-      "lastModificationDate": 1690063131617,
-      "contentHash": "5c5d659137f03576b16f3a5f91cba4f1",
+      "lastModificationDate": 1690082356212,
+      "contentHash": "7d8a6c6c670b75e1510a65e9d76c75aa",
       "sourceName": "contracts/SismoVerifier.sol",
       "solcConfig": {
         "version": "0.8.17",

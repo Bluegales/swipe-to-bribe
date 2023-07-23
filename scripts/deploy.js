@@ -26,7 +26,7 @@ async function main() {
 
   // We get the contract to deploy
   const PromiseEscrow = await hre.ethers.getContractFactory("PromiseEscrow");
-  const promiseEscrow = await PromiseEscrow.deploy("0x07865c6E87B9F70255377e024ace6630C1Eaa37F", "0x9923D42eF695B5dd9911D05Ac944d4cAca3c4EAB", "0x2DBcc4C4A7df5b6839B83fb08A237402EC444a6c");
+  const promiseEscrow = await PromiseEscrow.deploy("0x07865c6E87B9F70255377e024ace6630C1Eaa37F", "0x9923D42eF695B5dd9911D05Ac944d4cAca3c4EAB", "0xF8D57Bcbd972EF9b7B115fed104FAA67Aa956adE");
 
   await promiseEscrow.deployed();
 

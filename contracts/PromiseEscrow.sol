@@ -33,15 +33,6 @@ contract PromiseEscrow
     );
     event promiseAsserted(bytes32 indexed promiseId, string assertedOutcome, bytes32 indexed assertionId);
     event promiseResolved(bytes32 indexed promiseId);
-    // event TokensCreated(bytes32 indexed promiseId, address indexed account, uint256 tokensCreated);
-    // event TokensRedeemed(bytes32 indexed promiseId, address indexed account, uint256 tokensRedeemed);
-    // event TokensSettled(
-    //     bytes32 indexed promiseId,
-    //     address indexed account,
-    //     uint256 payout,
-    //     uint256 outcome1Tokens,
-    //     uint256 outcome2Tokens
-    // );
 
     using SafeERC20 for IERC20;
     IERC20 public immutable                      currency;
@@ -52,6 +43,7 @@ contract PromiseEscrow
 
     struct Promise
     {
+        bytes32 promiseId;
         address politician;
         string  statement;
         uint256 stake;
@@ -68,6 +60,7 @@ contract PromiseEscrow
 
     mapping(bytes32 => Promise)         public promises;
     mapping(bytes32 => AssertedPromise) public assertedPromises; // Maps assertionId to Assertedpromise.
+    Promise[]                           public promiseArr;
 
     constructor(address _currency, address _optimisticOracleV3, address _sismoVerifier)
     {
@@ -77,18 +70,16 @@ contract PromiseEscrow
         sismoVerifier = ISismoVerifier(_sismoVerifier);
     }
 
-    function getPromise(bytes32 promiseId) public view returns (Promise memory) {
-        return promises[promiseId];
-    }
-
-    function createPromise(string memory statement, bytes memory responseSismo) public returns (bytes32 promiseId)
+    function createPromise(string memory statement, string memory sismoSignature, bytes memory responseSismo) public returns (bytes32 promiseId)
     {
-        sismoVerifier.verifyPolitician(responseSismo, abi.encodePacked("Creating promise ", statement));
+        // bytes memory encodedStatement = abi.encode(statement);
+        sismoVerifier.verifyPolitician(responseSismo, abi.encode(sismoSignature));
 
         promiseId = keccak256(abi.encode(statement, msg.sender));
         require(promises[promiseId].politician == address(0), "promise already exists");
         promises[promiseId] = Promise
         ({
+            promiseId: promiseId,
             politician: msg.sender,
             statement: statement,
             stake: 0,
@@ -96,14 +87,15 @@ contract PromiseEscrow
             payedOutcome: 0,
             resolved: false
         });
+        promiseArr.push(promises[promiseId]);
 
         emit promiseInitialized(promiseId, "Yes", "No", statement, address(0), address(0), 0, 0);
     }
 
     // @todo restrict possible payment amounts
-    function    stakeForPromise(bytes32 promiseId, bytes memory responseSismo) external payable
+    function stakeForPromise(bytes32 promiseId, string memory sismoSignature, bytes memory responseSismo) external payable
     {
-        sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked("Staking ", msg.value, " for promise ", promises[promiseId].statement));
+        sismoVerifier.verifyCitizen(responseSismo, abi.encodePacked(sismoSignature));
 
         require(promises[promiseId].politician != address(0), "Promise does not exist");
         require(msg.value > 0, "Must send ETH to stake for a promise");
@@ -135,7 +127,7 @@ contract PromiseEscrow
         emit promiseAsserted(promiseId, promises[promiseId].statement, assertionId);
     }
 
-    function    assertionResolvedCallback(bytes32 assertionId, bool assertedTruthfully) public
+    function assertionResolvedCallback(bytes32 assertionId, bool assertedTruthfully) public
     {
         require(msg.sender == address(oo), "Not authorized");
         Promise storage promise_ = promises[assertedPromises[assertionId].promiseId];
@@ -153,7 +145,7 @@ contract PromiseEscrow
         promise_.assertedOutcome = 0;
     }
 
-    function    assertionDisputedCallback(bytes32 assertionId) public {}
+    function assertionDisputedCallback(bytes32 assertionId) public {}
 
     function _composeClaim(uint32 count, string memory description) pure internal returns (bytes memory)
     {

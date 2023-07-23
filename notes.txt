@@ -2,9 +2,9 @@
 OUR GOERLI contracts
 ====================
 	SismoVerifier
-		0x2DBcc4C4A7df5b6839B83fb08A237402EC444a6c
+		0x1360c34ae91f3A0ee514FcFf31834901552260f3
 	PromiseEscrow (with SismoVerifier)
-		0x151840029b5D9e4d0F472B4c7c952e93cCD74BdF
+		0x8e46A84eCf34caff642b9B6c38Da3511187DE707
 	PromiseEscrow (without SismoVerifier)
 		0x181242Cc8290CC779cd267520c27527aCc465578
 
