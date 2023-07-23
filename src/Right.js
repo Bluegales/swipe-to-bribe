@@ -1,13 +1,15 @@
 import SismoButt from "./Sismo.tsx"
 import { MetaMaskSDK } from '@metamask/sdk'
-import { CONTRACT_ADDRESS } from  './constants'
+import { CONTRACT_ADDRESS, SISMO_CONST } from  './constants'
 import ABI from './abi.json'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ethers } from 'ethers';
+import './App.css'
 
 function RightSide () { 
     const [address, setAddress] = useState()
-    const sismoResponse = null;
+    const [sismoResponse, setSismoResponse] = useState(null);
+
 
     async function signMeta () {
         // const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
@@ -17,31 +19,44 @@ function RightSide () {
         console.log(address);
     }
 
-    async function createContract() {
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, address);
+    async function createContract2() {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
         try {
-            const tx = await contract.createfund(
-            (document.getElementById("name") as HTMLInputElement).value,
-            (document.getElementById("address") as HTMLInputElement).value,
-            (document.getElementById("description") as HTMLInputElement).value,
-            coverUrl
-        );
-        await tx.wait();
-        router.reload();
-        console.log("Campaign created: " + tx.hash);
-      } catch (error) {
-        console.log("Error while creating campaign: ", error);
-      }
-    }
-    
+          const tx = await contract.promiseArr(0);
+          console.log((tx));
+          const decodeString = Buffer.from(tx[2], 'hex').toString('utf8');
+          console.log(decodeString);
+        } catch (error) {
+          console.log("Error while creating campaign: ", error);
+        }
+    } 
+
+    async function createContract() {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
+        try {
+          const tx = await contract.createPromise(
+            (new ethers.utils.AbiCoder()).encode(["string"], ["I promise to finish school"]),
+            (new ethers.utils.AbiCoder()).encode(["string"], [SISMO_CONST]),
+            sismoResponse,
+          );
+          await tx.wait();
+          console.log("Campaign created: " + tx.hash);
+        } catch (error) {
+          console.log("Error while creating campaign: ", error);
+        }
+    } 
 
     return (
-      <div className="blocks rightblock">
-        <SismoButt onValueChange={sismoResponse} />
-        <button className="MetaMask" onClick={signMeta}>Connect Wallet</button>
-        <button className="MetaMask" onClick={console.log(CONTRACT_ADDRESS)} >Contract</button>
-        <Contract />
-        <h3 className="MetaMask">Wallet Address: </h3>
+      <div className="rightblock">
+        <div className="buttonsright">
+            <SismoButt setSismoResponse={setSismoResponse} />
+            <button onClick={signMeta}>Connect Wallet</button>
+            <button onClick={createContract2}>Create Contract</button>
+        </div>
       </div>
     );
 }

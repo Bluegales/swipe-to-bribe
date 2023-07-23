@@ -30,93 +30,6 @@
 				"type": "bytes32"
 			},
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "tokensCreated",
-				"type": "uint256"
-			}
-		],
-		"name": "TokensCreated",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "promiseId",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "tokensRedeemed",
-				"type": "uint256"
-			}
-		],
-		"name": "TokensRedeemed",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "promiseId",
-				"type": "bytes32"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "payout",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "outcome1Tokens",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "outcome2Tokens",
-				"type": "uint256"
-			}
-		],
-		"name": "TokensSettled",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "bytes32",
-				"name": "promiseId",
-				"type": "bytes32"
-			},
-			{
 				"indexed": false,
 				"internalType": "string",
 				"name": "assertedOutcome",
@@ -285,6 +198,16 @@
 				"internalType": "string",
 				"name": "statement",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "sismoSignature",
+				"type": "string"
+			},
+			{
+				"internalType": "bytes",
+				"name": "responseSismo",
+				"type": "bytes"
 			}
 		],
 		"name": "createPromise",
@@ -325,57 +248,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "promiseId",
-				"type": "bytes32"
-			}
-		],
-		"name": "getPromise",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "address",
-						"name": "politician",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "statement",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "stake",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint32",
-						"name": "assertedOutcome",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "payedOutcome",
-						"type": "uint32"
-					},
-					{
-						"internalType": "bool",
-						"name": "resolved",
-						"type": "bool"
-					}
-				],
-				"internalType": "struct PromiseEscrow.Promise",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "oneDayInBlocks",
 		"outputs": [
@@ -404,6 +276,55 @@
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "promiseArr",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "politician",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "statement",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "stake",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint32",
+				"name": "assertedOutcome",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "payedOutcome",
+				"type": "uint32"
+			},
+			{
+				"internalType": "bool",
+				"name": "resolved",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "bytes32",
 				"name": "",
 				"type": "bytes32"
@@ -411,6 +332,11 @@
 		],
 		"name": "promises",
 		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "promiseId",
+				"type": "bytes32"
+			},
 			{
 				"internalType": "address",
 				"name": "politician",
@@ -450,7 +376,7 @@
 		"name": "sismoVerifier",
 		"outputs": [
 			{
-				"internalType": "contract SismoVerifier",
+				"internalType": "contract ISismoVerifier",
 				"name": "",
 				"type": "address"
 			}
@@ -464,6 +390,11 @@
 				"internalType": "bytes32",
 				"name": "promiseId",
 				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "sismoSignature",
+				"type": "string"
 			},
 			{
 				"internalType": "bytes",

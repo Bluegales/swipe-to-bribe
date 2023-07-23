@@ -81,7 +81,7 @@ function Cards () {
 
 
   return (
-    <div classNames="blocks middleblock">
+    <div classNames="middleblock">
       <link
         href='https://fonts.googleapis.com/css?family=Damion&display=swap'
         rel='stylesheet'
@@ -108,6 +108,7 @@ function Cards () {
               style={{ backgroundImage: 'url(' + character.url + ')' }}
               className='card'
             >
+              <p>{character.promise}</p>
               <h3>{character.name}</h3>
             </div>
           </TinderCard>

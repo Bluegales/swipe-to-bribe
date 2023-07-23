@@ -15,31 +15,35 @@
 .row {
   display: flex;
   flex-direction: row;
+  margin: auto;
 }
 
 .leftblock {
   border-right: 1px dashed;
   border-image:  linear-gradient(
     to bottom, 
-    black, 
+    black 65%, 
     rgba(0, 0, 0, 0)
   ) 1 100%;
-  min-width: 25vw;
+  min-width: 20vw;
 }
 
 .rightblock {
-  border-left: 1px dashed;
+  border-left: 1px dotted;
   border-image:  linear-gradient(
     to bottom, 
-    black, 
+    black 65%, 
     rgba(0, 0, 0, 0)
   ) 1 100%;
-  min-width: 25vw;
+  min-width: 20vw;
 }
 
-.row {
-  flex-direction: row !important;
-  margin: auto;
+.middleblock {
+  
+}
+
+.rightbutt {
+
 }
 
 h1 {
@@ -76,6 +80,7 @@ h2 {
   height: 300px;
   margin-bottom: 25%;
   margin: auto;
+  transition: all .4s ease;
 }
 
 .card {
@@ -91,6 +96,8 @@ h2 {
   /* border-radius: 20px; */
   background-size: cover;
   background-position: center;
+  transition: all .4s ease;
+  flex-shrink: 0;
 }
 
 .card:hover {
@@ -100,7 +107,7 @@ h2 {
   background: white;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
   color: white;
-  box-shadow: 20px 20px rgba(0,0,0);
+  box-shadow: 15px 15px rgba(0,0,0);
   transition: all .4s ease;
 }
 
@@ -127,7 +134,6 @@ h2 {
   animation-name: popup;
   animation-duration: 800ms;
   margin: auto;
-  margin-top: 5%;
 }
 
 .buttons {
@@ -168,7 +174,45 @@ h2 {
   border: black;
   border-style:double;
   border-width:thin;
-  background: ghostwhite;
+  background: white;
+  box-shadow: 5px 5px rgba(0,0,0);
+  transition: all .4s ease;
+}
+
+.buttonsright {
+  margin:auto;
+  margin-top: 40%;
+  margin-left: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+
+.buttonsright button {
+  flex-shrink: 0;
+  padding: 10px;
+  border: black;
+  border-style:double;
+  border-width:thin;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  font-weight:bold;
+  background-color: white;
+  transition: 200ms;
+  margin: 10px;
+  width: 160px;
+  /* box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.10); */
+}
+
+.buttonsright button:hover {
+  transform: scale(1.05);
+  color: black;
+  position: relative;
+  border: black;
+  border-style:double;
+  border-width:thin;
+  background: white;
   box-shadow: 5px 5px rgba(0,0,0);
   transition: all .4s ease;
 }
