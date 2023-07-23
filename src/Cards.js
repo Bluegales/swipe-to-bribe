@@ -26,13 +26,13 @@ const db = [
     url: './img/erlich.jpg'
   },
   {
-    promise: 'yessss',
+    promise: 'yessssssssss',
     name: 'Joe Biden',
     party: 'Democratic Party',
     url: './img/monica.jpg'
   },
   {
-    promise: 'Some Things are gonna need to be done',
+    promise: 'Ice for everyone because why not!',
     name: 'Marine Le Pen',
     party: 'National Rally',
     url: './img/jared.jpg'
@@ -145,7 +145,7 @@ function Cards () {
               style={{ backgroundImage: 'url(' + character.url + ')' }}
               className='card'
             >
-              <p>Promise: {promise}</p>
+              <p className="promise">Promise: {character.promise}</p>
               <h3>{character.name}</h3>
             </div>
           </TinderCard>

@@ -24,6 +24,12 @@
   margin: auto;
 }
 
+.promise {
+  margin:10%;
+  margin-top: 20%;
+  font-size: larger;
+}
+
 .leftblock {
   border-right: 1px dashed;
   border-image:  linear-gradient(
@@ -112,7 +118,6 @@ h2 {
   height: 310px;
   background: white;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  color: white;
   box-shadow: 15px 15px rgba(0,0,0);
   transition: all .4s ease;
 }
