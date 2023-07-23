@@ -9,7 +9,6 @@ function RightSide () {
   const { setSismoResponse } = useContext(UserContext);
 
     async function signMeta () {
-        // const ethereum = MMSDK.getProvider(); // You can also access via window.ethereum
         const MMSDK = new MetaMaskSDK();
         address = window.ethereum.request({ method: 'eth_requestAccounts', params: [] });
         setAddress(address);
@@ -25,5 +24,5 @@ function RightSide () {
       </div>
     );
 }
-  
+
 export default RightSide
