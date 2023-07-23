@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/react-tinder-card-demo/static/css/main.abdd01ed.css",
-    "main.js": "/react-tinder-card-demo/static/js/main.9e6e97a1.js",
-    "index.html": "/react-tinder-card-demo/index.html",
-    "main.abdd01ed.css.map": "/react-tinder-card-demo/static/css/main.abdd01ed.css.map",
-    "main.9e6e97a1.js.map": "/react-tinder-card-demo/static/js/main.9e6e97a1.js.map"
+    "main.css": "/swiberight2bribe/static/css/main.1aaf73cd.css",
+    "main.js": "/swiberight2bribe/static/js/main.9378c0bf.js",
+    "static/js/180.6fc82c65.chunk.js": "/swiberight2bribe/static/js/180.6fc82c65.chunk.js",
+    "static/js/965.1c9f0603.chunk.js": "/swiberight2bribe/static/js/965.1c9f0603.chunk.js",
+    "static/media/logo.png": "/swiberight2bribe/static/media/logo.bf5852fc5fdcecbe2274.png",
+    "index.html": "/swiberight2bribe/index.html",
+    "main.1aaf73cd.css.map": "/swiberight2bribe/static/css/main.1aaf73cd.css.map",
+    "main.9378c0bf.js.map": "/swiberight2bribe/static/js/main.9378c0bf.js.map",
+    "180.6fc82c65.chunk.js.map": "/swiberight2bribe/static/js/180.6fc82c65.chunk.js.map",
+    "965.1c9f0603.chunk.js.map": "/swiberight2bribe/static/js/965.1c9f0603.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abdd01ed.css",
-    "static/js/main.9e6e97a1.js"
+    "static/css/main.1aaf73cd.css",
+    "static/js/main.9378c0bf.js"
   ]
 }
