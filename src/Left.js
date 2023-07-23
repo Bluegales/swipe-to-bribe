@@ -26,8 +26,9 @@ function LeftSide () {
 
   return (
     <div className="blocks leftblock">
-      <img/>
-      <h1>SwipeRight2Bribe</h1>
+      <div class="image"></div>
+      <h1>SwipeRight</h1>
+      <h1>2Bribe</h1>
       {/* <form>
         <input type="text"></input>
         <input type="submit" value="Submit" onClick={() => createPromise()}/>
