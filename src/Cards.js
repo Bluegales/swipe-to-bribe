@@ -1,6 +1,11 @@
-import React, { useState, useMemo, useRef } from 'react'
+import React, { useState, useMemo, useRef, useContext } from 'react'
 import TinderCard from 'react-tinder-card'
+import { ethers } from 'ethers';
+import ABI from './abi.json'
+import { CONTRACT_ADDRESS, SISMO_CONST } from  './constants'
+import { UserContext } from './App';
 
+//we dont want to use this anymore
 const db = [
   {
     promise: 'Some Things are gonna need to be done',
@@ -35,10 +40,12 @@ const db = [
 ]
 
 function Cards () {
-  const [currentIndex, setCurrentIndex] = useState(db.length - 1)
-  const [lastDirection, setLastDirection] = useState()
+  const { address } = useContext(UserContext);
+  const { sismoResponse } = useContext(UserContext);
+  const [currentIndex, setCurrentIndex] = useState(db.length - 1);
+  const [lastDirection, setLastDirection] = useState();
   // used for outOfFrame closure
-  const currentIndexRef = useRef(currentIndex)
+  const currentIndexRef = useRef(currentIndex);
 
   const childRefs = useMemo(
     () =>
@@ -79,6 +86,21 @@ function Cards () {
     }
   }
 
+  async function getPromise() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
+    try {
+      const tx = await contract.promiseArr(0);
+      console.log((tx));
+      const promise = ethers.utils.toUtf8String(tx[2]);
+    } catch (error) {
+      console.log("Error while creating campaign: ", error);
+    }
+    return (promise);
+  } 
+
+  const promise = getPromise();
 
   return (
     <div classNames="middleblock">
@@ -108,7 +130,7 @@ function Cards () {
               style={{ backgroundImage: 'url(' + character.url + ')' }}
               className='card'
             >
-              <p>{character.promise}</p>
+              <p></p>
               <h3>{character.name}</h3>
             </div>
           </TinderCard>
